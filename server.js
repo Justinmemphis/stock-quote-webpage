@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-require('dotenv').config
 
 const apiRoutes = require('./routes/api.js')
 
@@ -11,12 +10,7 @@ app.use('/public', express.static(process.cwd() + '/public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.route('/')
-  .get(function (req, res) {
-    res.sendFile(process.cwd() + '/views/index.html')
-  })
-
-  apiRoutes(app)
+apiRoutes(app)
 
 app.use(function (req, res, next) {
   res.status(404)
