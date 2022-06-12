@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+06/11/22 - created package.json file; got node running correctly; got index.html displaying correctly; also added gitignore so node modules don't go to github
+Goal for tomorrow - start to create stock symbol lookup - use controller js file
+
+=======
+>>>>>>> parent of 36dfe8a (created package.json file; got node running correctly; got index.html displaying correctly)
 06/10/22 - created basic file structure; created basic server.js file; created basic index.html file; created basic style.css file
 Goal for tomorrow - prepare package.json; get Node running correctly; get index.html displaying correctly
 
