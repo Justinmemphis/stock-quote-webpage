@@ -12,14 +12,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 apiRoutes(app)
 
-app.use(function (req, res, next) {
-  res.status(404)
-    .type('text')
-    .send('Not Found')
-})
-
 const port = process.env.Port || 3000
 
 app.listen(port, function() {
   console.log('Listening on port ' + port)
+})
+
+app.use(function (req, res, next) {
+  res.status(404)
+    .type('text')
+    .send('Not Found')
 })

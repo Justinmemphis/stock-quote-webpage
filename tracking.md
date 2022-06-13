@@ -1,3 +1,5 @@
+06/12/22 - started to program submit button form for stock symbol lookup - didn't have time to get very far as cut short
+
 06/11/22 - created package.json file; got node running correctly; got index.html displaying correctly; also added gitignore so node modules don't go to github; had to redo 1/2 an hour of work because I messed up github commits
 Goal for tomorrow - start to create stock symbol lookup - use controller js file
 
@@ -16,6 +18,7 @@ Implementation:
 - Get ability to select certain financial variables (free cash flow, net income, etc.)
 - Compare companies?
 - Graphing results?
+- React front-end to check stock quote etc.?
 
 Later options:
 - Create MongoDB database of user logins - to store saved companies, etc.

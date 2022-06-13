@@ -13,9 +13,13 @@
       <h1>Stock Quote Webpage</h1>
     </header>
     <section>
-      <h3>Input Stock Symbol Here</h3>
+      <form id="company-ticker-lookup" method="post" action="/api/companyname">
+        <h3>Input Stock Symbol Here</h3>
+        <input id="companyname" type="text" name="companyname" placeholder="Company Name" />
+        <input type="submit" value="Submit" />
+      </form>
     </section>
-    
+
 
   </body>
 
