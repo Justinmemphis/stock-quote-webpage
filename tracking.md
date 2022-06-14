@@ -1,3 +1,6 @@
+06/13/22 - got route to button working correctly; added NASDAQ dataset of 8,438 companies and tickers ready (in CSV format); got csv file parsed via papaparse
+Goal to work on next - do search through csv file for stock symbol lookup
+
 06/12/22 - started to program submit button form for stock symbol lookup - didn't have time to get very far as cut short
 
 06/11/22 - created package.json file; got node running correctly; got index.html displaying correctly; also added gitignore so node modules don't go to github; had to redo 1/2 an hour of work because I messed up github commits
