@@ -1,3 +1,6 @@
+06/14/22 - got stock symbol lookup through csv file to work; included search for substring; included convert to lowercase string and substring so search is case sensitive
+Goal tomorrow - research stock data api?
+
 06/13/22 - got route to button working correctly; added NASDAQ dataset of 8,438 companies and tickers ready (in CSV format); got csv file parsed via papaparse
 Goal to work on next - do search through csv file for stock symbol lookup
 
@@ -35,3 +38,4 @@ How to run npm/node:
 3. Run "node server.js" or "nodemon server.js"
 
 https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09
+how to find objects in array: https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects

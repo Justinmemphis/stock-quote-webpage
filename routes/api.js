@@ -31,10 +31,17 @@ module.exports = function (app) {
   app.route('/api/companyname')
     .post(async (req, res) => {
     try {
-      console.log('Company Name: ' + req.body.companyname)
-      console.log(csvData)
+      let userCompany = req.body.companyname
+      // console.log('Company Name: ' + userCompany)
+      // console.log(typeof userCompany)
+      //console.log(csvData)
+      // console.log(csvData[0].Name) // how to reference fields in array
+      let newAnswer = csvData.find(x => x.Name.toLowerCase().includes(userCompany.toLowerCase()))
+      // console.log(newAnswer)
       return res.json({
-        "Company Name": req.body.companyname
+        "Your Input": userCompany,
+        "Company Name": newAnswer.Name,
+        "Stock Symbol": newAnswer.Symbol
       })
     } catch (err) {
       console.log('Error - catch block')
@@ -45,3 +52,6 @@ module.exports = function (app) {
   })
 
 }
+
+// AECOM Common Stock
+// ACNB Corporation Common Stock
