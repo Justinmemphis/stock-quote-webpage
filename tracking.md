@@ -1,3 +1,9 @@
+Summary - ************************************************************************ this is 72 characters
+06/15/22:
+Summary - finished symbol lookup route; started quote lookup route
+Details - changed string output of error (really catch block) of stock quote lookup; moved stock quote lookup function to a separate 'quote_lookup' file under controllers folder; moved csv parsing etc. to same file to clean up routes/api.js; created 'stock_quote' file and matching route in api.js - put in filler res.json to verify it works
+Goal tomorrow - research api to connect to for financial data
+
 06/14/22 - got stock symbol lookup through csv file to work; included search for substring; included convert to lowercase string and substring so search is case sensitive
 Goal tomorrow - research stock data api?
 
@@ -39,3 +45,4 @@ How to run npm/node:
 
 https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09
 how to find objects in array: https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects
+how to use papaparse csv parsing: https://stackoverflow.com/questions/49752889/how-can-i-read-a-local-file-with-papa-parse

@@ -3,9 +3,9 @@
 
   <head>
     <title>Stock Quote Webpage</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./public/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='./public/style.css'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
   </head>
 
   <body>
@@ -13,11 +13,19 @@
       <h1>Stock Quote Webpage</h1>
     </header>
     <section>
-      <form id="company-ticker-lookup" action="api/companyname" method="post">
+      <form id='company-ticker-lookup' action='api/companyname' method='post'>
         <h3>Don't Know the Stock Symbol?  Input Stock Company Name Here</h3>
-        <input id="companyname" type="text" name="companyname" placeholder="Company Name" />
-        <input type="submit" value="Submit" />
+        <input id='companyname' type='text' name='companyname' placeholder='Company Name' />
+        <input type='submit' value='Submit' />
         <h4>(Currently has the NASDAQ 8,438 companies and tickers as of 06/13/2022)</h4>
+      </form>
+    </section>
+    <section>
+      <h3>Stock Data</h3>
+      <h4>From Yahoo Finance</h4>
+      <form id='stock-quote' action='api/stockquote' method='post'>
+        <input id='stocksymbol' type='text' name='stocksymbol' placeholder='Stock Symbol' />
+        <input type='submit' value='submit'>
       </form>
     </section>
 
