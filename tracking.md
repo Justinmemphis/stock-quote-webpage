@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+06/16/22:
+Summary -
+Details - researched defunct status of Yahoo Finance API and Google Finance API; read documentation and created account for Alpha Vantage API
+Goal tomorrow - get Alpha Vantage API connected
+
 06/15/22:
 Summary - finished symbol lookup route; started quote lookup route
 Details - changed string output of error (really catch block) of stock quote lookup; moved stock quote lookup function to a separate 'quote_lookup' file under controllers folder; moved csv parsing etc. to same file to clean up routes/api.js; created 'stock_quote' file and matching route in api.js - put in filler res.json to verify it works
@@ -26,10 +31,10 @@ Plan of action:
 - Create basic javascript controller file
 
 Implementation:
-- Link up Yahoo Finance API (or equivalent)
+- Link up Yahoo Finance API (or equivalent) - AlphaVantage?
 - Get ability to select certain financial variables (free cash flow, net income, etc.)
 - Compare companies?
-- Graphing results?
+- Graphing results? - using D3?
 - React front-end to check stock quote etc.?
 
 Later options:
