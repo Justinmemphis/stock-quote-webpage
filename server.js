@@ -1,8 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
+require('dotenv').config()
 
 const apiRoutes = require('./routes/api.js')
+
+const api_key = process.env.ALPHA_VANTAGE_KEY
 
 let app = express()
 
@@ -17,6 +20,7 @@ const port = process.env.Port || 3000
 
 app.listen(port, function() {
   console.log('Listening on port ' + port)
+  console.log(api_key)
 })
 
 app.use(function (req, res, next) {

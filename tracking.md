@@ -1,6 +1,22 @@
 Summary - ************************************************************************ this is 72 characters
+06/19/22:
+Summary - setup AlphaVantage API connection
+Details - weekly task planning; review AWS hosting; comments on routes api.js; add .env file locally; install request library; setup of .env file; install dotenv library; got AlphaVantage API working!
+Goal tomorrow - play around with AlphaVantage requests to get more specific data response I can work with
+
+Sunday - weekly goals, next steps, etc.:
+- ~~get Alpha Vantage API connected~~
+- ~~research API with more calls per hour than Alpha AlphaVantage - OK as is w/ every 20 seconds~~
+- setup website to load up in React instead of raw HTML (i.e. move it to web 2.0)
+- Have stock symbol results pop through via React
+- Have stock data results pop through via React
+- cloud resume challenge
+  - AWS certification
+  - hosting w/ dynamic integration
+  - rewrite code in Python, etc.
+
 06/16/22:
-Summary -
+Summary - research finance APIs
 Details - researched defunct status of Yahoo Finance API and Google Finance API; read documentation and created account for Alpha Vantage API
 Goal tomorrow - get Alpha Vantage API connected
 
