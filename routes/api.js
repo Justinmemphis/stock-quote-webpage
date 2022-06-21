@@ -1,15 +1,15 @@
 module.exports = function (app) {
 
-  const quote_lookup = require('../controllers/quote_lookup')
-  const stock_quote = require('../controllers/stock_quote')
+  const stock_symbol_lookup = require('../controllers/stock_symbol_lookup')
+  const alpha_vantage_stock_quote = require('../controllers/alpha_vantage_stock_quote')
 
   // first route is to lookup the stock symbol in the CSV file
   app.route('/api/companyname')
-    .post(quote_lookup.lookup)
+    .post(stock_symbol_lookup.lookup)
 
   // second route is to lookup stock data (once you have the stock symbol)
   app.route('/api/stockquote')
-    .post(stock_quote.quote)
+    .post(alpha_vantage_stock_quote.quote)
 
   app.route('/')
     .get(function (req, res) {

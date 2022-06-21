@@ -17,17 +17,24 @@
         <h3>Don't Know the Stock Symbol?  Input Stock Company Name Here</h3>
         <input id='companyname' type='text' name='companyname' placeholder='Company Name' />
         <input type='submit' value='Submit' />
-        <h4>(Currently has the NASDAQ 8,438 companies and tickers as of 06/13/2022)</h4>
+        <h4>Currently has the NASDAQ 8,438 companies and tickers as of 06/13/2022</h4>
+        <h4>US Companies Only</h4>
       </form>
+      <div id='symbol_lookup_container'></div>
     </section>
     <section>
       <h3>Stock Data</h3>
-      <h4>From Yahoo Finance</h4>
+      <h4>From Alpha Vantage</h4>
       <form id='stock-quote' action='api/stockquote' method='post'>
         <input id='stocksymbol' type='text' name='stocksymbol' placeholder='Stock Symbol' />
         <input type='submit' value='submit'>
       </form>
     </section>
+
+  <script src='https://unpkg.com/react@18/umd/react.development.js' crossorigin></script>
+  <script src='https://unpkg.com/react-dom@18/umd/react-dom-development.js' crossorigin></script>
+
+  <script src='symbol_lookup_react.js'></script>
 
   </body>
 

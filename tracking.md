@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+06/10/22:
+Summary - changed API call; started to form first React component
+Details - clean up some console.logs; change index.html to show correct data source; rename stock_symbol_lookup to be more clear; rename alpha_vantage_stock_quote to be more clear; play around with AlphaVantage apis; update index.html to clarify US companies only; changed API call to TIME_SERIES_DAILY; start to setup React front-end for response; install babel library so React can use JSX
+Goal tomorrow - get React working! - need to finish getting JSX to work correctly
+
 06/19/22:
 Summary - setup AlphaVantage API connection
 Details - weekly task planning; review AWS hosting; comments on routes api.js; add .env file locally; install request library; setup of .env file; install dotenv library; got AlphaVantage API working!
@@ -58,6 +63,7 @@ Later options:
 - Create login / password input forms
 - Hash password with bcrypt library
 - Have login through Auth0? Or google?
+- foreign company stock symbol lookup?  AlphaVantage can do foreign searches
 
 How to run npm/node:
 1. In project folder, "npm init"

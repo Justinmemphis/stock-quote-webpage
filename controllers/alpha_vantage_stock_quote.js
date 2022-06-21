@@ -11,11 +11,11 @@ exports.quote = async function(req, res) {
     method:'GET',
     url: 'https://www.alphavantage.co/query',
     qs: {
-      interval: '5min',
-      function: 'TIME_SERIES_INTRADAY',
+      // interval: '60min',
+      function: 'TIME_SERIES_DAILY',
       symbol: userSymbol,
-      datatype: 'json',
       output_size: 'compact',
+      datatype: 'json',
       apikey: process.env.ALPHA_VANTAGE_KEY
     }
   }

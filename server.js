@@ -20,7 +20,6 @@ const port = process.env.Port || 3000
 
 app.listen(port, function() {
   console.log('Listening on port ' + port)
-  console.log(api_key)
 })
 
 app.use(function (req, res, next) {
