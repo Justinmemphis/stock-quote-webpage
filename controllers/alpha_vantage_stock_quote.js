@@ -4,7 +4,7 @@
 'use strict'
 const request = require('request')
 
-exports.quote = async function(req, res) {
+exports.quote = function(req, res) {
   let userSymbol = req.body.stocksymbol
 
   const options = {

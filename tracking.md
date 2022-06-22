@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
-06/10/22:
+06/21/22:
+Summary - changed some CSS styling; got demo React component working
+Details - changed CSS styling; changed width to match mobile size; added static folder and reformated folder structure; got React demo component working - like button component
+Goal tomorrow - get JSX to work correctly?
+
+06/20/22:
 Summary - changed API call; started to form first React component
 Details - clean up some console.logs; change index.html to show correct data source; rename stock_symbol_lookup to be more clear; rename alpha_vantage_stock_quote to be more clear; play around with AlphaVantage apis; update index.html to clarify US companies only; changed API call to TIME_SERIES_DAILY; start to setup React front-end for response; install babel library so React can use JSX
 Goal tomorrow - get React working! - need to finish getting JSX to work correctly

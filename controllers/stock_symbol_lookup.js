@@ -15,7 +15,7 @@ Papa.parse(file, {
   }
 })
 
-exports.lookup = async function(req, res) {
+exports.lookup = function(req, res) {
   let userCompany = req.body.companyname
   try {
     let newAnswer = csvData.find(x => x.Name.toLowerCase().includes(userCompany.toLowerCase()))

@@ -9,7 +9,7 @@ const api_key = process.env.ALPHA_VANTAGE_KEY
 
 let app = express()
 
-app.use('/public', express.static(process.cwd() + '/public'))
+app.use('/static', express.static(process.cwd() + '/static'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
