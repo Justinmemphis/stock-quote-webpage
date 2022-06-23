@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+06/22/22:
+Summary - setup JSX
+Details - playing around with react and converting to JSX; installed react and react-dom libraries; got JSX working; started to reformat React like_button.js
+Goal tomorrow - keep working with React - get output of company lookup to work and display results in output
+
 06/21/22:
 Summary - changed some CSS styling; got demo React component working
 Details - changed CSS styling; changed width to match mobile size; added static folder and reformated folder structure; got React demo component working - like button component

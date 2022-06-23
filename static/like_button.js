@@ -1,13 +1,12 @@
 // started based off of this website: https://reactjs.org/docs/add-react-to-a-website.html
 
-'use strict';
-
-const e = React.createElement;
-
-class LikeButton extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state = {
+      liked: false,
+      companyNameInput: []
+     };
   }
 
   render() {
@@ -15,14 +14,13 @@ class LikeButton extends React.Component {
       return 'You liked this.';
     }
 
-    return e(
-      'button',
-      { onClick: () => this.setState({ liked: true }) },
-      'Like'
+    return (
+      //<div id='output-display'>{this.state.companyNameInput}</div>
+      <button onClick={ () => this.setState( { liked: true })}>
+        Like
+      </button>
     );
   }
 }
 
-const domContainer = document.querySelector('#like_button_container');
-const root = ReactDOM.createRoot(domContainer);
-root.render(e(LikeButton));
+ReactDOM.render(<App />, document.getElementById('like_button_container'));
