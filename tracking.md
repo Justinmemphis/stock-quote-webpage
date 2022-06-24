@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+06/23/22:
+Summary - worked on react component for stock quote lookup
+Details - added more complex React component; renamed files for react; worked on getting react input to work
+Goal tomorrow - keep working on react
+
 06/22/22:
 Summary - setup JSX
 Details - playing around with react and converting to JSX; installed react and react-dom libraries; got JSX working; started to reformat React like_button.js

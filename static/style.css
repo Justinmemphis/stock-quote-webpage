@@ -23,3 +23,15 @@ section {
   width: 330px;
 
 }
+
+#lookup-output {
+  display: flex;
+  flex-wrap: wrap;
+  background: green;
+  color: black;
+  width:330px;
+  margin:2px;
+  padding:5px;
+  height:20px;
+  justify-content: flex-end;
+}
