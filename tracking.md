@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+06/24/22:
+Summary - more work on form submission in react
+Details - reading about react interface with APIs; working on implementing react; working on form submission with react
+Goal tomorrow - look at last link in company_name_button.js and try to get that working
+
 06/23/22:
 Summary - worked on react component for stock quote lookup
 Details - added more complex React component; renamed files for react; worked on getting react input to work
