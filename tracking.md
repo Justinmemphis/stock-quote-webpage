@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+06/26/22:
+Summary - started create-react-app
+Details - working on implementing react; undid react modules so far and started create-react-app
+Goal tomorrow - finish create-react-app - see webpage here: https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/ - on step 4
+
 06/24/22:
 Summary - more work on form submission in react
 Details - reading about react interface with APIs; working on implementing react; working on form submission with react
