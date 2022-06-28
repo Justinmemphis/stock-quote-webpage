@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+06/27/22:
+Summary - link create-react-app to initial files
+Details - made http request from react to node
+Goal tomorrow - keep working on react
+
 06/26/22:
 Summary - started create-react-app
 Details - working on implementing react; undid react modules so far and started create-react-app
@@ -98,3 +103,5 @@ How to run npm/node:
 https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09
 how to find objects in array: https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects
 how to use papaparse csv parsing: https://stackoverflow.com/questions/49752889/how-can-i-read-a-local-file-with-papa-parse
+
+how to start up react - "cd client" to change to client directory - then "npm start"

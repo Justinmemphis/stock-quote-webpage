@@ -4,7 +4,7 @@
 // https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
 
 function NameLookup (props) {
-  return <h3>{props.value}>/h3>
+  //return <h3>{props.value}>/h3>
 }
 
 
