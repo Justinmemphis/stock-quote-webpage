@@ -11,6 +11,10 @@ module.exports = function (app) {
   app.route('/api/stockquote')
     .post(alpha_vantage_stock_quote.quote)
 
+  app.get('/api', (req, res) => {
+    res.json({ message: 'Hello from server!' })
+  })
+
   app.route('/')
     .get(function (req, res) {
       console.log('routes/api.js loading correctly')

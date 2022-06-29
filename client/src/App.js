@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
 import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -18,7 +18,6 @@ function App() {
         <p>{!data ? "Loading..." : data}</p>
       </header>
     </div>
-
   );
 }
 

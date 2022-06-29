@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+06/28/22:
+Summary - continue work on react on company_name_button.js
+Details - read more on react; re-install react and react-dom libraries on main webpage; revert button.js to prior settings and read react documentation to understand forms coming through
+Goal tomorrow - keep working on react - see react documentation on forms
+
 06/27/22:
 Summary - link create-react-app to initial files
 Details - made http request from react to node
