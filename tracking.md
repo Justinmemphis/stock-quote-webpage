@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+07/02/22:
+Summary - remove create-react-app
+Details - remove create-react-app; change server port
+Goal tomorrow -
+
 06/28/22:
 Summary - continue work on react on company_name_button.js
 Details - read more on react; re-install react and react-dom libraries on main webpage; revert button.js to prior settings and read react documentation to understand forms coming through

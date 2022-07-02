@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 apiRoutes(app)
 
-const port = process.env.Port || 3001
+const port = process.env.Port || 3000
 
 app.listen(port, function() {
   console.log('Listening on port ' + port)
