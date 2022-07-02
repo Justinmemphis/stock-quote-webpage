@@ -1,7 +1,7 @@
 Summary - ************************************************************************ this is 72 characters
 07/02/22 #2:
 Summary - configuring react component
-Details - ON replit - upload to replit; configuring nodemon; removing react component; LOCAL - configuring react component; install react-scripts
+Details - ON REPLIT - upload to replit; configuring nodemon; removing react component; LOCAL - configuring react component; install react-scripts
 Goal tomorrow - need to finish react component - see last link on company_name_button.js - put in code from index.js on link
 
 07/02/22 #1:
