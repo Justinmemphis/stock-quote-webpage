@@ -2,13 +2,51 @@
 // also from here: https://reactjs.org/docs/forms.html
 // also: https://stackoverflow.com/questions/58579975/how-to-invoke-a-component-on-handlesubmit-in-react
 // https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
+// https://stackoverflow.com/questions/69698080/display-user-input-value-upon-submit-in-react
 
+import React, { useState } from 'react'
+
+export default function App() {
+  const [enteredText, setEnteredText] = useState('')
+  const [displayText, setDisplayText] = useState('')
+  const textChangeHandler = (i) => {
+    setEnteredText(i.target.value)
+  }
+
+  const submitHandler = (evernt) => {
+    event.preventDefault()
+    setDisplayText(enteredText)
+    const x = enteredText
+    console.log(x)
+    setEnteredText('')
+  }
+
+  return (
+    <div>
+      <form onSubmit={submitHandler}>
+        <input
+          placeholder='type something'
+          type='text'
+          value={enteredText}
+          onChange={textChangeHandler}
+        />
+        <button type='submit'>Submit</button>
+      </form>
+      <p>You just typed: {displayText}</p>
+    </div>
+  )
+}
+
+/*
 function NameLookup (props) {
   // return <h3>{props.value}>/h3>
 }
+*/
 
-
+/*
 class App extends React.Component {
+
+
   constructor(props) {
     super(props);
     this.state = {
@@ -47,7 +85,7 @@ class App extends React.Component {
         <div>
           <NameLookup value={this.state.value} />
         </div>
-        
+
 
         // {this.state.showInfo ? <NameLookup /> : null}
       </div>
@@ -56,5 +94,6 @@ class App extends React.Component {
     );
   }
 }
+*/
 
 ReactDOM.render(<App />, document.getElementById('company_name_container'));
