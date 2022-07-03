@@ -4,7 +4,8 @@
 // https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
 // https://stackoverflow.com/questions/69698080/display-user-input-value-upon-submit-in-react
 
-import React, { useState } from 'react'
+import React, { useState, StrictMode } from 'react'
+import ReactDOM from 'react-dom'
 
 export default function App() {
   const [enteredText, setEnteredText] = useState('')
@@ -23,6 +24,7 @@ export default function App() {
 
   return (
     <div>
+      <h1>Get user input</h1>
       <form onSubmit={submitHandler}>
         <input
           placeholder='type something'
@@ -96,4 +98,9 @@ class App extends React.Component {
 }
 */
 
-ReactDOM.render(<App />, document.getElementById('company_name_container'));
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById('company_name_container')
+);

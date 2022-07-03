@@ -1,4 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
+07/03/22:
+Summary - configuring babel
+Details - finish react component setup; configure babel; review babel options
+Goal tomorrow - I think I'll need to reset to create-react-app - per link below
+https://stackoverflow.com/questions/56281479/switch-over-to-create-react-app-on-existing-project
+
 07/02/22 #2:
 Summary - configuring react component
 Details - ON REPLIT - upload to replit; configuring nodemon; removing react component; LOCAL - configuring react component; install react-scripts
