@@ -1,4 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
+07/04/22:
+Summary - testing create-react-app on other repo
+Details - started new branch to test create-react-app; started new repo to test create-react-app
+Goal tomorrow - look at Nico Diz's post on stackoverflow - install/save dependencies (step 2)
+https://stackoverflow.com/questions/56281479/switch-over-to-create-react-app-on-existing-project
+
 07/03/22:
 Summary - configuring babel
 Details - finish react component setup; configure babel; review babel options
