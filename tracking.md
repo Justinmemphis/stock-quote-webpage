@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+07/06/22:
+Summary - fix replit version bug; started create-react-app
+Details - REPLIT - replit version of stock quote webpage isn't loading correctly - tested on mobile; troubleshooting package problem; RESOLVED - it was the .replit file kept referencing nodemon, which apparently is installed globally with replit, which was causing weird issues; LOCAL/BRANCH - installed create-react-app dependencies; started to configure local files to match create-react-app; ran into too many errors so started rebuilding create-react-app in the same git project
+Goal tomorrow - get create-react-app to load with no errors
+
 07/05/22:
 Summary - planning notes changes
 Details - talked to Douglas and made some planning notes changes - see details below
@@ -127,7 +132,7 @@ Later options:
 - Important - Have login through Auth0? Or google? -- yes, need some sort of login to a dashboard, etc. (07/05/22)
 - foreign company stock symbol lookup?  AlphaVantage can do foreign searches
 - Important - host on AWS
-- Important - testing
+- Important - testing - Jest included w/ create-react-app
 - Important - CI/CD with GitHub Actions
 
 How to run npm/node:

@@ -1,3 +1,8 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './style.css'
+
+
 const express = require('express')
 const bodyParser = require('body-parser')
 require('dotenv').config()
@@ -6,7 +11,7 @@ const api_key = process.env.ALPHA_VANTAGE_KEY
 
 let app = express()
 
-app.use('/static', express.static(process.cwd() + '/static'))
+app.use('/public', express.static(process.cwd() + '/public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 apiRoutes(app)
