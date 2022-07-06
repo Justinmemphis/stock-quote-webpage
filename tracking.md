@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+07/05/22:
+Summary - planning notes changes
+Details - talked to Douglas and made some planning notes changes - see details below
+Goal tomorrow - continue to test create-react-app
+
 07/04/22:
 Summary - testing create-react-app on other repo
 Details - started new branch to test create-react-app; started new repo to test create-react-app
@@ -102,14 +107,14 @@ Goal for tomorrow - start to create stock symbol lookup - use controller js file
 Goal for tomorrow - prepare package.json; get Node running correctly; get index.html displaying correctly
 
 Plan of action:
-- Create basic HTML webpage
-- Create basic CSS
-- Create basic javascript file for server
-- Create basic javascript routes file
-- Create basic javascript controller file
+- ~~Create basic HTML webpage~~
+- ~~Create basic CSS~~
+- ~~Create basic javascript file for server~~
+- ~~Create basic javascript routes file~~
+- ~~Create basic javascript controller file~~
 
 Implementation:
-- Link up Yahoo Finance API (or equivalent) - AlphaVantage?
+- ~~Link up Yahoo Finance API (or equivalent) - AlphaVantage?~~
 - Get ability to select certain financial variables (free cash flow, net income, etc.)
 - Compare companies?
 - Graphing results? - using D3?
@@ -119,8 +124,11 @@ Later options:
 - Create MongoDB database of user logins - to store saved companies, etc.
 - Create login / password input forms
 - Hash password with bcrypt library
-- Have login through Auth0? Or google?
+- Important - Have login through Auth0? Or google? -- yes, need some sort of login to a dashboard, etc. (07/05/22)
 - foreign company stock symbol lookup?  AlphaVantage can do foreign searches
+- Important - host on AWS
+- Important - testing
+- Important - CI/CD with GitHub Actions
 
 How to run npm/node:
 1. In project folder, "npm init"
