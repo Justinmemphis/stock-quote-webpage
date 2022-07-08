@@ -1,6 +1,6 @@
 const Papa = require('papaparse')
 const fs = require('fs')
-const csvFilePath = 'nasdaq_screener_061322.csv'
+const csvFilePath = './nasdaq_screener_061322.csv'
 const file = fs.createReadStream(csvFilePath)
 
 // this next section taken completely from stackoverflow - see link in tracking.md

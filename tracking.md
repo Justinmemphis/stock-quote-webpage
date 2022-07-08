@@ -1,4 +1,19 @@
 Summary - ************************************************************************ this is 72 characters
+07/07/22:
+Summary - getting create-react-app to work
+Details - try to get create-react-app to work; uninstall some dependencies no longer needed; after much trial got create-react-app to work; next connecting branch up
+Goal tomorrow - build old website into create-react-app structure - slowly move old file structure in
+
+07/06/22:
+Summary - fix replit version bug; started create-react-app
+Details - REPLIT - replit version of stock quote webpage isn't loading correctly - tested on mobile; troubleshooting package problem; RESOLVED - it was the .replit file kept referencing nodemon, which apparently is installed globally with replit, which was causing weird issues; LOCAL/BRANCH - installed create-react-app dependencies; started to configure local files to match create-react-app; ran into too many errors so started rebuilding create-react-app in the same git project
+Goal tomorrow - get create-react-app to load with no errors
+
+07/05/22:
+Summary - planning notes changes
+Details - talked to Douglas and made some planning notes changes - see details below
+Goal tomorrow - continue to test create-react-app
+
 07/04/22:
 Summary - testing create-react-app on other repo
 Details - started new branch to test create-react-app; started new repo to test create-react-app
@@ -102,14 +117,14 @@ Goal for tomorrow - start to create stock symbol lookup - use controller js file
 Goal for tomorrow - prepare package.json; get Node running correctly; get index.html displaying correctly
 
 Plan of action:
-- Create basic HTML webpage
-- Create basic CSS
-- Create basic javascript file for server
-- Create basic javascript routes file
-- Create basic javascript controller file
+- ~~Create basic HTML webpage~~
+- ~~Create basic CSS~~
+- ~~Create basic javascript file for server~~
+- ~~Create basic javascript routes file~~
+- ~~Create basic javascript controller file~~
 
 Implementation:
-- Link up Yahoo Finance API (or equivalent) - AlphaVantage?
+- ~~Link up Yahoo Finance API (or equivalent) - AlphaVantage?~~
 - Get ability to select certain financial variables (free cash flow, net income, etc.)
 - Compare companies?
 - Graphing results? - using D3?
@@ -119,8 +134,11 @@ Later options:
 - Create MongoDB database of user logins - to store saved companies, etc.
 - Create login / password input forms
 - Hash password with bcrypt library
-- Have login through Auth0? Or google?
+- Important - Have login through Auth0? Or google? -- yes, need some sort of login to a dashboard, etc. (07/05/22)
 - foreign company stock symbol lookup?  AlphaVantage can do foreign searches
+- Important - host on AWS
+- Important - testing - Jest included w/ create-react-app
+- Important - CI/CD with GitHub Actions
 
 How to run npm/node:
 1. In project folder, "npm init"
