@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+07/07/22:
+Summary - getting create-react-app to work
+Details - try to get create-react-app to work; uninstall some dependencies no longer needed; after much trial got create-react-app to work; next connecting branch up
+Goal tomorrow - build old website into create-react-app structure - slowly move old file structure in
+
 07/06/22:
 Summary - fix replit version bug; started create-react-app
 Details - REPLIT - replit version of stock quote webpage isn't loading correctly - tested on mobile; troubleshooting package problem; RESOLVED - it was the .replit file kept referencing nodemon, which apparently is installed globally with replit, which was causing weird issues; LOCAL/BRANCH - installed create-react-app dependencies; started to configure local files to match create-react-app; ran into too many errors so started rebuilding create-react-app in the same git project
