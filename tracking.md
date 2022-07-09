@@ -1,4 +1,13 @@
 Summary - ************************************************************************ this is 72 characters
+07/09/22:
+Summary - implementing express with react
+Details - look at form submission in react; problems with webpack within create-react-app; downgrade react-scripts version and delete/reinstall all packages; starting to implement routes - problems with interaction of create-react-app and node
+Goal tomorrow - get node express working with routes
+https://www.pluralsight.com/guides/form-submission-in-reactjs
+https://stackoverflow.com/questions/23427384/get-form-data-in-reactjs
+https://blog.testdouble.com/posts/2019-11-04-react-mvc/
+https://stackoverflow.com/questions/64557638/how-to-polyfill-node-core-modules-in-webpack-5
+
 07/08/22:
 Summary - restoring index.html and style.css input to app.js and index.css
 Details - updating index.html; updating index.css; finished putting in both former index.html and style.css (in app.js and index.css, respectively)

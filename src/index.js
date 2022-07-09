@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// const express = require('express')
+// const bodyParser = require('body-parser')
+// require('dotenv').config()
+// const api_key = process.env.ALPHA_VANTAGE_KEY
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
