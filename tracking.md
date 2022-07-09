@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+07/08/22:
+Summary - restoring index.html and style.css input to app.js and index.css
+Details - updating index.html; updating index.css; finished putting in both former index.html and style.css (in app.js and index.css, respectively)
+Goal tomorrow - I guess I don't need nodemon now with create-react-app? - keep for now; now need to get routes and both functions working again; then can change and make results dynamic with react
+
 07/07/22:
 Summary - getting create-react-app to work
 Details - try to get create-react-app to work; uninstall some dependencies no longer needed; after much trial got create-react-app to work; next connecting branch up
