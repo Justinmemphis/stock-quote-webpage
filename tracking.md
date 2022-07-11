@@ -1,4 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
+07/11/22:
+Summary - setting up node server to work with react
+Details - setting up node server to work with react
+Goal tomorrow - keep working on same
+https://medium.com/nerd-for-tech/react-frontend-nodejs-backend-167e2904e5c9
+https://dev.to/_s_w_a_y_a_m_/how-to-integrate-react-frontend-with-node-backend-36a4
+
 07/09/22:
 Summary - implementing express with react
 Details - look at form submission in react; problems with webpack within create-react-app; downgrade react-scripts version and delete/reinstall all packages; starting to implement routes - problems with interaction of create-react-app and node

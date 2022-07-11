@@ -1,6 +1,15 @@
+import React from 'react';
 import './App.css';
 
 function App() {
+  const [data, setData] = React.useState(null)
+
+  React.useEffect(() => {
+    fetch('/api/')
+      .then((res) => res.json())
+      .then((data) => setData(data.message))
+  }, [])
+
   return (
     <div>
       <section>
@@ -19,6 +28,9 @@ function App() {
           <input id='stocksymbol' type='text' name='stocksymbol' placeholder='Stock Symbol' />
           <input type='submit' value='submit' />
         </form>
+      </section>
+      <section>
+        <h3>{!data ? 'Loading...' : data}</h3>
       </section>
     </div>
   );
