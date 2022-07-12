@@ -1,4 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
+import StockSymbolLookup from './stock_symbol_lookup_react'
 import './App.css';
 
 function App() {
@@ -20,6 +23,9 @@ function App() {
           <h4>Currently has the NASDAQ 8,438 companies and tickers as of 06/12/2022</h4>
           <h4>US Companies Only</h4>
         </form>
+      </section>
+      <section>
+      
       </section>
       <section>
         <h3>Stock Data</h3>

@@ -1,4 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
+07/12/22:
+Summary - routing in react; starting route for stock-symbol-lookup
+Details - got node server working and results displaying on react page!; install cors; add back routes.js file; install npm-run-all; making routes in react; adding route for stock-symbol-lookup - had to leave while not finished
+Goal tomorrow - finish adding route for stock-symbol-lookup
+changes to package.json scripts - https://medium.com/nerd-for-tech/react-frontend-nodejs-backend-167e2904e5c9https://
+routing in React - https://www.pragimtech.com/blog/reactjs/routing-in-react/
+
 07/11/22:
 Summary - setting up node server to work with react
 Details - setting up node server to work with react
