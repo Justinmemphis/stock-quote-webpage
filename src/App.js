@@ -25,7 +25,7 @@ function App() {
         </form>
       </section>
       <section>
-      
+
       </section>
       <section>
         <h3>Stock Data</h3>

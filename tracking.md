@@ -1,4 +1,13 @@
 Summary - ************************************************************************ this is 72 characters
+07/13/22:
+Summary - working on route for stock-symbol-lookup
+Details - keep adding route for stock-symbol-lookup; add react-router-dom
+Goal tomorrow - implement axios or fetch request to handle form submission
+start with react-router-dom - https://github.com/remix-run/react-router/blob/main/docs/getting-started/tutorial.md
+fetch in react - https://www.robinwieruch.de/react-hooks-fetch-data/
+https://axios-http.com/docs/example
+https://blog.logrocket.com/axios-vs-fetch-best-http-requests/
+
 07/12/22:
 Summary - routing in react; starting route for stock-symbol-lookup
 Details - got node server working and results displaying on react page!; install cors; add back routes.js file; install npm-run-all; making routes in react; adding route for stock-symbol-lookup - had to leave while not finished
