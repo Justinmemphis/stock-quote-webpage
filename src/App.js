@@ -1,22 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
-import StockSymbolLookup from './stock_symbol_lookup_react'
+import React, { useState, useEffect } from 'react';
+// import ReactDOM from 'react-dom';
+// import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  const [data, setData] = React.useState(null)
+  const [data, setData] = useState(null)
+  const [companyname, setCompanyName] = useState(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch('/api/')
       .then((res) => res.json())
       .then((data) => setData(data.message))
   }, [])
 
+  useEffect(() => {
+    fetch('/api/companyname/')
+      .then((res) => res.json())
+      .then((companyname) => setCompanyName(companyname))
+  }, [])
+
   return (
     <div>
       <section>
-        <form id='company-ticker-lookup' method='post'> {/* also add action='api/companyname' */}
+        <form id='company-ticker-lookup' method='post' action='api/companyname'>
           <h3>{"Don't know the stock symbol? Input Stock Company Name Here"}</h3>
           <input id='companyname' type='test' name='companyname' placeholder='Company Name' />
           <input type='submit' value='Submit' />
@@ -25,7 +31,7 @@ function App() {
         </form>
       </section>
       <section>
-
+        <h3>{!companyname ? 'Loading...' : companyname}</h3>
       </section>
       <section>
         <h3>Stock Data</h3>

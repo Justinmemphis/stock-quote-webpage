@@ -1,4 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
+07/16/22:
+Summary - route for company name search; proxy issues
+Details - minor destructuring; routing for stock-symbol-lookup; building additional useEffect; troubleshooting routing issue with proxy
+Goal tomorrow - get papaparse to parse the csv file on request; get res.json to return dynamic result (change the form input?)
+useEffect with promises vs. async/await: https://javascript.plainenglish.io/fetching-data-with-useeffect-in-react-604ed53edffe
+usEffect docs: https://reactjs.org/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns
+
 07/13/22:
 Summary - working on route for stock-symbol-lookup
 Details - keep adding route for stock-symbol-lookup; add react-router-dom
