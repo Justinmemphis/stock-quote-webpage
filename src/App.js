@@ -2,18 +2,23 @@ import React, { useState, useEffect } from 'react';
 // import ReactDOM from 'react-dom';
 // import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import './App.css';
+import ReadRemoteFile from './other_functions/papaparse_csv_file.js'
 
 function App() {
   const [data, setData] = useState(null)
   const [companyname, setCompanyName] = useState(null)
 
+  // this is the test api
   useEffect(() => {
     fetch('/api/')
       .then((res) => res.json())
       .then((data) => setData(data.message))
   }, [])
 
+  // this is the company name -> stock symbol lookup
   useEffect(() => {
+
+    // this is the route
     fetch('/api/companyname/')
       .then((res) => res.json())
       .then((companyname) => setCompanyName(companyname))
@@ -32,6 +37,9 @@ function App() {
       </section>
       <section>
         <h3>{!companyname ? 'Loading...' : companyname}</h3>
+      </section>
+      <section>
+        <ReadRemoteFile />
       </section>
       <section>
         <h3>Stock Data</h3>

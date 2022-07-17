@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+07/07/22:
+Summary - update papaparse; react function for parsing stock symbol csv file
+Details - read more about React hooks; install react-papaparse and remove old papaparse; setup new react function for parsing csv file
+Goal tomorrow - need to complete function to parse csv file and return results, etc. - look at official react docs
+
 07/16/22:
 Summary - route for company name search; proxy issues
 Details - minor destructuring; routing for stock-symbol-lookup; building additional useEffect; troubleshooting routing issue with proxy
