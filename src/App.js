@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 // import ReactDOM from 'react-dom';
 // import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import './App.css';
-import ReadRemoteFile from './other_functions/papaparse_csv_file.js'
+// import ReadRemoteFile from './other_functions/papaparse_csv_file.js'
+import axios from 'axios'
 
 function App() {
   const [data, setData] = useState(null)
@@ -10,7 +11,7 @@ function App() {
 
   // this is the test api
   useEffect(() => {
-    fetch('/api/')
+    axios.get('/api/')
       .then((res) => res.json())
       .then((data) => setData(data.message))
   }, [])
@@ -19,7 +20,7 @@ function App() {
   useEffect(() => {
 
     // this is the route
-    fetch('/api/companyname/')
+    axios.get('/api/companyname/')
       .then((res) => res.json())
       .then((companyname) => setCompanyName(companyname))
   }, [])
@@ -39,7 +40,7 @@ function App() {
         <h3>{!companyname ? 'Loading...' : companyname}</h3>
       </section>
       <section>
-        <ReadRemoteFile />
+      {/*  <ReadRemoteFile /> */}
       </section>
       <section>
         <h3>Stock Data</h3>

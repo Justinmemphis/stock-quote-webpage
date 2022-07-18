@@ -1,5 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
-07/07/22:
+07/18/22:
+Summary - configuring axios
+Details - setup axios for routes; changing routes
+Goal tomorrow - keep working on axios and proxy issues
+axios usage examples: https://zetcode.com/javascript/axios/
+fetch vs. axios: https://meticulous.ai/blog/fetch-vs-axios/
+
+07/17/22:
 Summary - update papaparse; react function for parsing stock symbol csv file
 Details - read more about React hooks; install react-papaparse and remove old papaparse; setup new react function for parsing csv file
 Goal tomorrow - need to complete function to parse csv file and return results, etc. - look at official react docs
