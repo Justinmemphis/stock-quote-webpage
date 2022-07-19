@@ -12,6 +12,6 @@ module.exports = function (app) {
     .post(alpha_vantage_stock_quote.quote)
 
   app.get('/api', (req, res) => {
-    res.json({ message: 'Hello from server! '})
+    res.send('Hello from server!')
   })
 }

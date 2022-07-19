@@ -7,15 +7,21 @@ import axios from 'axios'
 
 function App() {
   const [data, setData] = useState(null)
-  const [companyname, setCompanyName] = useState(null)
+  // const [companyname, setCompanyName] = useState(null)
 
   // this is the test api
   useEffect(() => {
-    axios.get('/api/')
-      .then((res) => res.json())
-      .then((data) => setData(data.message))
+    const fetchData = async () => {
+      const result = await axios(
+        '/api'
+      )
+      setData(result.data)
+    }
+
+    fetchData()
   }, [])
 
+/*}
   // this is the company name -> stock symbol lookup
   useEffect(() => {
 
@@ -24,6 +30,8 @@ function App() {
       .then((res) => res.json())
       .then((companyname) => setCompanyName(companyname))
   }, [])
+*/
+
 
   return (
     <div>
@@ -37,7 +45,7 @@ function App() {
         </form>
       </section>
       <section>
-        <h3>{!companyname ? 'Loading...' : companyname}</h3>
+        {/* <h3>{!companyname ? 'Loading...' : companyname}</h3> */}
       </section>
       <section>
       {/*  <ReadRemoteFile /> */}

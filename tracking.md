@@ -1,4 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
+07/19/22:
+Summary - redo test API route with axios instead of fetch
+Details - setting axios route; got basic API test route working
+Goal tomorrow - work on company name lookup function; change res.json to res.send where necessary
+https://www.robinwieruch.de/react-hooks-fetch-data/
+
 07/18/22:
 Summary - configuring axios
 Details - setup axios for routes; changing routes
