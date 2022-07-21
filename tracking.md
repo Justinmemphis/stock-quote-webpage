@@ -1,4 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
+07/21/22:
+Summary - resolving manifest.json issue
+Details - deleting old icons for create-react-app; cleaning up manifest.json route; clean up index.js; learned this is just an issue in Chrome vanilla - not an issue in Firefox or Chrome incognito mode - passing on resolving further
+Goal tomorrow -
+error with manifest.json in create-react-app: https://stackoverflow.com/questions/72415961/manifest-json-error-in-line-1-in-react-js
+manifest guide: https://web.dev/add-manifest/
+ See Marc's answer: https://stackoverflow.com/questions/53527972/cant-get-rid-of-missing-manifest-json-error
+
 07/19/22:
 Summary - redo test API route with axios instead of fetch
 Details - setting axios route; got basic API test route working

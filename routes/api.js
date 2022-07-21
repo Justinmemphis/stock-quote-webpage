@@ -14,4 +14,8 @@ module.exports = function (app) {
   app.get('/api', (req, res) => {
     res.send('Hello from server!')
   })
+
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname,'/public/index.html'))
+  })
 }
