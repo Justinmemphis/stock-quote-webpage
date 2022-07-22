@@ -7,7 +7,8 @@ import axios from 'axios'
 
 function App() {
   const [data, setData] = useState(null)
-  // const [companyname, setCompanyName] = useState(null)
+  const [companyname, setCompanyName] = useState('')
+  const [fetchedData, setFetchedData] = useState('')
 
   // this is the test api
   useEffect(() => {
@@ -21,31 +22,46 @@ function App() {
     fetchData()
   }, [])
 
-/*}
-  // this is the company name -> stock symbol lookup
-  useEffect(() => {
+  // function for posting company name
+  async function fetchData() {
+    const { data } = await axios.post(
+      '/api/companyname',
+      companyname
+    )
+    setFetchedData(data)
+  }
 
-    // this is the route
-    axios.get('/api/companyname/')
-      .then((res) => res.json())
-      .then((companyname) => setCompanyName(companyname))
+  useEffect( () => {
+    fetchData()
   }, [])
-*/
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    fetchData()
+  }
 
   return (
     <div>
       <section>
         <form id='company-ticker-lookup' method='post' action='api/companyname'>
           <h3>{"Don't know the stock symbol? Input Stock Company Name Here"}</h3>
-          <input id='companyname' type='test' name='companyname' placeholder='Company Name' />
-          <input type='submit' value='Submit' />
+          <input
+            placeholder='Company Name'
+            type='text'
+            value={companyname}
+            onChange = { e => setCompanyName(e.target.value)}
+            name='companyname'
+          />
+          <input
+            type='submit'
+            onSubmit= { () => this.handleSubmit}
+          />
           <h4>Currently has the NASDAQ 8,438 companies and tickers as of 06/12/2022</h4>
           <h4>US Companies Only</h4>
         </form>
       </section>
       <section>
-        {/* <h3>{!companyname ? 'Loading...' : companyname}</h3> */}
+        <h3>{!companyname ? 'Loading...' : companyname}</h3>
       </section>
       <section>
       {/*  <ReadRemoteFile /> */}
@@ -55,7 +71,7 @@ function App() {
         <h4>From Alpha Vantage</h4>
         <form id='stock-quote' method='post'> {/* also add action='api/stockquote' */}
           <input id='stocksymbol' type='text' name='stocksymbol' placeholder='Stock Symbol' />
-          <input type='submit' value='submit' />
+          <input type='submit' value='Submit' />
         </form>
       </section>
       <section>

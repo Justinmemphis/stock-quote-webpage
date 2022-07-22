@@ -1,4 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
+07/22/22:
+Summary - work on form submission for companyname
+Details - axios form submission with useeffect; work on form submission
+Goal tomorrow - look into form submission
+https://stackoverflow.com/questions/62248741/how-to-apply-useeffect-based-on-form-submission-in-react
+https://stackoverflow.com/questions/38262148/react-handle-form-submit
+
 07/21/22:
 Summary - resolving manifest.json issue
 Details - deleting old icons for create-react-app; cleaning up manifest.json route; clean up index.js; learned this is just an issue in Chrome vanilla - not an issue in Firefox or Chrome incognito mode - passing on resolving further
