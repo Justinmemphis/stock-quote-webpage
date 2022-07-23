@@ -19,14 +19,14 @@ exports.lookup = function(req, res) {
   let userCompany = req.body.companyname
   try {
     let newAnswer = csvData.find(x => x.Name.toLowerCase().includes(userCompany.toLowerCase()))
-    return res.json({
+    return res.send({
       'Your Input': userCompany,
       'Company Name': newAnswer.Name,
       'Stock Symbol': newAnswer.Symbol
     })
   } catch (err) {
     console.log('Error - catch block')
-    res.json({
+    res.send({
       'Your Input': userCompany,
       'Error': 'No such company found.'
     })

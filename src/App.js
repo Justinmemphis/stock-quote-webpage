@@ -56,9 +56,10 @@ function App() {
             type='submit'
             onSubmit= { () => this.handleSubmit}
           />
-          <h4>Currently has the NASDAQ 8,438 companies and tickers as of 06/12/2022</h4>
-          <h4>US Companies Only</h4>
         </form>
+        <button>Submit</button>
+        <h4>Currently has the NASDAQ 8,438 companies and tickers as of 06/12/2022</h4>
+        <h4>US Companies Only</h4>
       </section>
       <section>
         <h3>{!companyname ? 'Loading...' : companyname}</h3>

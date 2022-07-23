@@ -1,4 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
+07/23/22:
+Summary - adding form submission
+Details - adding form submission
+Goal tomorrow - keep working on form submission - watch 2nd link
+https://www.freecodecamp.org/news/add-form-validation-in-react-app-with-react-hook-form/
+https://www.youtube.com/watch?v=LcAyJRlvh8Y
+
 07/22/22:
 Summary - work on form submission for companyname
 Details - axios form submission with useeffect; work on form submission
