@@ -1,4 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
+07/26/22:
+Summary - change caching; updating papaparse to react-papaparse
+Details - cache was storing old files so installed nocache library; also disable fast-refresh; implementing react-papaparse; breaking in stock_symbol_lookup - remove link to get it working
+Goal tomorrow - reroute stock symbol lookup to just be react function import (no api route?)
+https://react-papaparse.js.org/
+https://bobbyhadz.com/blog/react-export-component-function
+
 07/23/22:
 Summary - adding form submission
 Details - adding form submission

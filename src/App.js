@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import ReactDOM from 'react-dom';
 // import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import './App.css';
-// import ReadRemoteFile from './other_functions/papaparse_csv_file.js'
+import {ReadRemoteFile} from '../controllers/stock_symbol_lookup'
 import axios from 'axios'
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
   }, [])
 
   const handleSubmit = e => {
-    e.preventDefault()
+    // e.preventDefault()
     fetchData()
   }
 
@@ -52,12 +52,12 @@ function App() {
             onChange = { e => setCompanyName(e.target.value)}
             name='companyname'
           />
-          <input
+          <button
             type='submit'
-            onSubmit= { () => this.handleSubmit}
-          />
+            onSubmit={ () => this.handleSubmit}
+          >Submit</button>
         </form>
-        <button>Submit</button>
+
         <h4>Currently has the NASDAQ 8,438 companies and tickers as of 06/12/2022</h4>
         <h4>US Companies Only</h4>
       </section>
@@ -65,7 +65,7 @@ function App() {
         <h3>{!companyname ? 'Loading...' : companyname}</h3>
       </section>
       <section>
-      {/*  <ReadRemoteFile /> */}
+      <ReadRemoteFile />
       </section>
       <section>
         <h3>Stock Data</h3>

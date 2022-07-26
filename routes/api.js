@@ -5,7 +5,7 @@ module.exports = function (app) {
 
   // first route is to lookup the stock symbol in the CSV file
   app.route('/api/companyname')
-    .post(stock_symbol_lookup.lookup)
+    .post(stock_symbol_lookup.Lookup)
 
   // second route is to lookup stock data (once you have the stock symbol)
   app.route('/api/stockquote')

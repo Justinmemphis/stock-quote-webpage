@@ -1,21 +1,41 @@
-const Papa = require('papaparse')
 const fs = require('fs')
 const csvFilePath = './nasdaq_screener_061322.csv'
 const file = fs.createReadStream(csvFilePath)
+const { usePapaParse } = require('react-papaparse')
+
+const ReadRemoteFile = function(req, res) {
+  const { readRemoteFile } = usePapaParse()
+
+  const handleReadRemoteFile = () => {
+    readRemoteFile(file, {
+        step: (row) => {
+          console.log('Row:', row.data)
+        },
+        complete: () => {
+          console.log('All done!')
+        }
+      })
+    }
+
+  return <button onClick={ () => handleReadRemoteFile()}>readRemoteFile</button>
+}
+
+
 
 // this next section taken completely from stackoverflow - see link in tracking.md
-let csvData = []
+let csvData = [];
+console.log('csvData is: ' + csvData);
 Papa.parse(file, {
   header: true,
   step: function(result) {
-    csvData.push(result.data)
+    csvData.push(result.data),
   },
   complete: function(results, file) {
     console.log('Complete', csvData.length, 'records.')
   }
 })
 
-exports.lookup = function(req, res) {
+const Lookup = function(req, res) {
   let userCompany = req.body.companyname
   try {
     let newAnswer = csvData.find(x => x.Name.toLowerCase().includes(userCompany.toLowerCase()))
@@ -32,3 +52,5 @@ exports.lookup = function(req, res) {
     })
   }
 }
+
+export {ReadRemoteFile, Lookup};
