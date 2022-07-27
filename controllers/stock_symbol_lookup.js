@@ -17,7 +17,7 @@ const ReadRemoteFile = function(req, res) {
       })
     }
 
-  return <button onClick={ () => handleReadRemoteFile()}>readRemoteFile</button>
+  return <button onClick={() => handleReadRemoteFile()}>readRemoteFile</button>
 }
 
 

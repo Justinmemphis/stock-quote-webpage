@@ -1,4 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
+07/27/22:
+Summary - working on JSX issue for module
+Details - JSX transpile issue in stock_symbol_lookup
+Goal tomorrow -
+https://stackoverflow.com/questions/55955499/babel-jsx-transpiler-error-on-build-when-importing-a-module-into-new-create-reac
+https://create-react-app.dev/ - good source for create-react-app information
+https://v5.reactrouter.com/web/guides/quick-start
+
 07/26/22:
 Summary - change caching; updating papaparse to react-papaparse
 Details - cache was storing old files so installed nocache library; also disable fast-refresh; implementing react-papaparse; breaking in stock_symbol_lookup - remove link to get it working
