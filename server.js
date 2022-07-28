@@ -3,7 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 require('dotenv').config()
-const apiRoutes = require('./routes/api.js')
+const apiRoutes = require('./src/routes/api.js')
 const api_key = process.env.ALPHA_VANTAGE_KEY
 const nocache = require('nocache')
 

@@ -1,4 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
+07/28/22:
+Summary - changing folder structure for JSX
+Details - changing folder structure for JSX
+Goal tomorrow - look at first link to resolve?
+https://stackoverflow.com/questions/54340240/create-react-app-build-uncaught-syntaxerror-unexpected-token
+https://stackoverflow.com/questions/54703579/react-script-transpiling-third-party-jsx-files
+https://stackoverflow.com/questions/44114436/the-create-react-app-imports-restriction-outside-of-src-directory
+
 07/27/22:
 Summary - working on JSX issue for module
 Details - JSX transpile issue in stock_symbol_lookup
