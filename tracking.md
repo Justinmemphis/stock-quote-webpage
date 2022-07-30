@@ -1,4 +1,14 @@
 Summary - ************************************************************************ this is 72 characters
+07/30/22 #2:
+Summary - tutorial of react router
+Details - went through React Router tutorial - see separate repository; undid most changes from morning
+Goal tomorrow - migrate codebase to React Router - start with fork and merge up when successful
+
+07/30/22 #1:
+Summary - problems with routing and react
+Details - build broken; problems w/ subfolders and package.json modules; tried to redo .js files to get around 'require'
+Goal tomorrow -
+
 07/28/22:
 Summary - changing folder structure for JSX
 Details - changing folder structure for JSX
