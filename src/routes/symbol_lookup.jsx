@@ -1,12 +1,14 @@
-// import { ReadRemoteFile } from '../controllers/quote_csv_parse'
+import {
+  Outlet
+} from 'react-router-dom'
+import { ReadRemoteFile } from '../controllers/quote_csv_parse'
 
 function SymbolLookup() {
-  // let readRemote = ReadRemoteFile()
-
   return (
     <section>
       <h2>Symbol Lookup</h2>
-
+      <ReadRemoteFile />
+      <Outlet />
     </section>
   )
 }

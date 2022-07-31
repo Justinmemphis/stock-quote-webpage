@@ -37,7 +37,6 @@
   ],
   "author": "Justin Carter",
   "license": "MIT",
-  "proxy": "http://localhost:3001",
   "bugs": {
     "url": "https://github.com/Justinmemphis/stock-quote-webpage/issues"
   },

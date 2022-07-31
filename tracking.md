@@ -1,4 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
+07/31/22 #3:
+Summary - buildspace.so session; papaparse implementation in react
+Details - buildspace.so building session; papaparse-react implementation - try using useEffect instead
+Goal tomorrow - get papaparse csv parsing working
+https://stackoverflow.com/questions/71046264/react-hook-make-infinite-loop
+
 07/31/22 #2:
 Summary - create fork for react router; start on csv parser for quote lookup
 Details - create fork to test react router; routing looks good; started to create csv parser for stock quote lookup

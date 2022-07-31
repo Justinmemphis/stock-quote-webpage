@@ -1,23 +1,38 @@
-import React from 'react'
-import { usePapaParse } from 'react-papaparse'
-import fs from 'fs'
-const csvFilePath = 'nasdaq_screener_061322.csv'
-const file = fs.createReadStream(csvFilePath)
-
+import {
+  React,
+  useEffect,
+  useState
+} from 'react';
+import { usePapaParse } from 'react-papaparse';
 
 export function ReadRemoteFile() {
-  const { readRemoteFile } = usePapaParse
+  const url = 'nasdaq_screener_061322.csv';
+
+  const { readRemoteFile } = usePapaParse;
+  const [parsedCsvData, setParsedCsvData] = useState([]);
+
+  /* - see link in tracking.md about following this
+  useEffect(() => {
+    let stillMounted = true;
+    readRemoteFile(url, {
+      complete: results => {
+        if(!stillMounted) return;
+        setParsedCsvData(results.data);
+      }
+    });
+    return () => stillMounted = false;
+  }, [url]);
+  */
 
   const handleReadRemoteFile = () => {
-    readRemoteFile(file, {
-      step: (row) => {
-        console.log('Row:', row.data)
-      },
+    readRemoteFile(url, {
       complete: (results) => {
-        console.log('Reults:', results)
-      }
-    })
-  }
+        console.log('----------------------------');
+        console.log('Results:', results);
+        console.log('----------------------------');
+      },
+    });
+  };
 
-  return <button onClick={() => handleReadRemoteFile()}>readRemoteFile</button>
+  return <button onClick={() => handleReadRemoteFile()}>readRemoteFile</button>;
 }
