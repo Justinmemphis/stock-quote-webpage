@@ -4,8 +4,10 @@ module.exports = function (app) {
   //const alpha_vantage_stock_quote = require('../controllers/alpha_vantage_stock_quote')
 
   // first route is to lookup the stock symbol in the CSV file
+  /*
   app.route('/api/companyname')
     .post(stock_symbol_lookup.Lookup)
+  */
 
   // second route is to lookup stock data (once you have the stock symbol)
   /*

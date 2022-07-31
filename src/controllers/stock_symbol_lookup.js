@@ -1,3 +1,5 @@
+/*
+
 const fs = require('fs')
 const csvFilePath = './nasdaq_screener_061322.csv'
 const file = fs.createReadStream(csvFilePath)
@@ -17,10 +19,11 @@ const ReadRemoteFile = function(req, res) {
       })
     }
 
-  return <button onClick={() => handleReadRemoteFile()}>readRemoteFile</button>
+  return //<button onClick={() => handleReadRemoteFile()}>readRemoteFile</button>
 }
+*/
 
-
+/*
 
 // this next section taken completely from stackoverflow - see link in tracking.md
 let csvData = [];
@@ -52,5 +55,6 @@ const Lookup = function(req, res) {
     })
   }
 }
+*/
 
-export {ReadRemoteFile, Lookup};
+// export {ReadRemoteFile, Lookup};

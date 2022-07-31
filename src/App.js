@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import ReactDOM from 'react-dom';
 // import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import './App.css';
-import {ReadRemoteFile} from '../controllers/stock_symbol_lookup'
+// import {ReadRemoteFile} from '../controllers/stock_symbol_lookup'
 import axios from 'axios'
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
     fetchData()
   }, [])
 
+  /*
   // function for posting company name
   async function fetchData() {
     const { data } = await axios.post(
@@ -39,33 +40,17 @@ function App() {
     // e.preventDefault()
     fetchData()
   }
+  */
 
   return (
     <div>
       <section>
-        <form id='company-ticker-lookup' method='post' action='api/companyname'>
+        <form id='company-ticker-lookup' method='post'> {/* action='api/companyname' */}
           <h3>{"Don't know the stock symbol? Input Stock Company Name Here"}</h3>
-          <input
-            placeholder='Company Name'
-            type='text'
-            value={companyname}
-            onChange = { e => setCompanyName(e.target.value)}
-            name='companyname'
-          />
-          <button
-            type='submit'
-            onSubmit={ () => this.handleSubmit}
-          >Submit</button>
         </form>
 
         <h4>Currently has the NASDAQ 8,438 companies and tickers as of 06/12/2022</h4>
         <h4>US Companies Only</h4>
-      </section>
-      <section>
-        <h3>{!companyname ? 'Loading...' : companyname}</h3>
-      </section>
-      <section>
-      <ReadRemoteFile />
       </section>
       <section>
         <h3>Stock Data</h3>

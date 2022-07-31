@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+07/31/22:
+Summary - adjust back to not breaking
+Details - adjusting back to not breaking (removed company name search)
+Goal tomorrow - implement react router on fork
+
 07/30/22 #2:
 Summary - tutorial of react router
 Details - went through React Router tutorial - see separate repository; undid most changes from morning
