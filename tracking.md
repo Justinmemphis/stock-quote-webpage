@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
-07/31/22:
+07/31/22 #2:
+Summary - create fork for react router; start on csv parser for quote lookup
+Details - create fork to test react router; routing looks good; started to create csv parser for stock quote lookup
+Goal tomorrow - get csv parser working
+
+07/31/22 #1:
 Summary - adjust back to not breaking
 Details - adjusting back to not breaking (removed company name search)
 Goal tomorrow - implement react router on fork
