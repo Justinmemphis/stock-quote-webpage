@@ -1,5 +1,4 @@
-import {
-  React,
+import React, {
   useEffect,
   useState
 } from 'react';
@@ -11,18 +10,21 @@ export function ReadRemoteFile() {
   const { readRemoteFile } = usePapaParse;
   const [parsedCsvData, setParsedCsvData] = useState([]);
 
-  /* - see link in tracking.md about following this
+  /*
+  // - see link in tracking.md about following this
   useEffect(() => {
     let stillMounted = true;
     readRemoteFile(url, {
       complete: results => {
         if(!stillMounted) return;
         setParsedCsvData(results.data);
+        console.log(results);
       }
     });
     return () => stillMounted = false;
   }, [url]);
   */
+
 
   const handleReadRemoteFile = () => {
     readRemoteFile(url, {
@@ -33,6 +35,7 @@ export function ReadRemoteFile() {
       },
     });
   };
+
 
   return <button onClick={() => handleReadRemoteFile()}>readRemoteFile</button>;
 }

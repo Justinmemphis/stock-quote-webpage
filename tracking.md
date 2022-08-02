@@ -1,4 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
+08/02/22:
+Summary - react useEffect
+Details - working on parsing csv file in react; reading up on react usEffect
+Goal tomorrow -
+https://overreacted.io/a-complete-guide-to-useeffect/
+https://www.robinwieruch.de/react-hooks-fetch-data/
+
 07/31/22 #3:
 Summary - buildspace.so session; papaparse implementation in react
 Details - buildspace.so building session; papaparse-react implementation - try using useEffect instead
