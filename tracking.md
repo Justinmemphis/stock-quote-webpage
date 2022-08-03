@@ -1,4 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
+08/03/22:
+Summary -
+Details - reading up on react useEffect
+Goal tomorrow -
+https://overreacted.io/a-complete-guide-to-useeffect/ - got to "Don't Lie to React About Dependencies"
+
 08/02/22:
 Summary - react useEffect
 Details - working on parsing csv file in react; reading up on react usEffect
