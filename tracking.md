@@ -1,4 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
+
+1. 08/05/2022:
+  - Summary - setup dev environment on laptop
+  - Details - setup dev environment on laptop
+  - Goal tomorrow - keep implementing data fetching in react per two links below on 08/02
+
 08/03/22:
 Summary -
 Details - reading up on react useEffect
@@ -290,6 +296,7 @@ How to run npm/node:
 1. In project folder, "npm init"
 2. Install packages with npm - "npm i -s express" etc.
 3. Run "node server.js" or "nodemon server.js"
+4. When starting a new dev environment, remember to type "npm install" to download all node packages from package.json (08/05/22)
 
 https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09
 how to find objects in array: https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects
