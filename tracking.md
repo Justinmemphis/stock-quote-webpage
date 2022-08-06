@@ -1,4 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
+2. 08/06/22:
+  - Summary - got react-papaparse to load csv file correctly
+  - Details - got react-papaparse to load csv file correctly
+  - Goal tomorrow - have csv file load on start; reference in function
+
 
 1. 08/05/2022:
   - Summary - setup dev environment on laptop

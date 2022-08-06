@@ -5,10 +5,11 @@ import React, {
 import { usePapaParse } from 'react-papaparse';
 
 export function ReadRemoteFile() {
-  const url = 'nasdaq_screener_061322.csv';
 
-  const { readRemoteFile } = usePapaParse;
-  const [parsedCsvData, setParsedCsvData] = useState([]);
+  const { readRemoteFile } = usePapaParse();
+
+  //const [data, setData] = useState({ [] });
+  // const [parsedCsvData, setParsedCsvData] = useState([]);
 
   /*
   // - see link in tracking.md about following this
@@ -25,17 +26,20 @@ export function ReadRemoteFile() {
   }, [url]);
   */
 
-
   const handleReadRemoteFile = () => {
+    const url = 'nasdaq_screener_061322.csv';
+
     readRemoteFile(url, {
       complete: (results) => {
-        console.log('----------------------------');
+        console.log('----------------');
         console.log('Results:', results);
-        console.log('----------------------------');
+        console.log('----------------');
       },
     });
   };
 
 
-  return <button onClick={() => handleReadRemoteFile()}>readRemoteFile</button>;
+  return (
+    <button onClick={() => handleReadRemoteFile()}>readRemoteFile</button>
+  )
 }
