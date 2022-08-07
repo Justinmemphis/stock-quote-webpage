@@ -1,9 +1,14 @@
 Summary - ************************************************************************ this is 72 characters
+
+3. 08/07/22:
+  - Summary - update quote_csv_lookup to load on start
+  - Details - update quote_csv_lookup to load on start
+  - Goal tomorrow - clear exhaustive-deps problems from quote_csv_lookup
+
 2. 08/06/22:
   - Summary - got react-papaparse to load csv file correctly
   - Details - got react-papaparse to load csv file correctly
   - Goal tomorrow - have csv file load on start; reference in function
-
 
 1. 08/05/2022:
   - Summary - setup dev environment on laptop
