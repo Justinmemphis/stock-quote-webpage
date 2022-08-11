@@ -8,10 +8,11 @@ export function ReadRemoteFile() {
   const { readRemoteFile } = usePapaParse();
   const [data, setData] = useState([]);
   const url = 'nasdaq_screener_061322.csv';
+  console.log(data);
 
   useEffect(() => {
 
-    console.log(data);
+
     readRemoteFile(url, {
       complete: (results) => {
         console.log('---------------');
@@ -24,7 +25,7 @@ export function ReadRemoteFile() {
 
   return (
     <div>
-        <h1>{data}</h1>
+        <h1>(Data is loaded)</h1>
     </div>
   )
 }

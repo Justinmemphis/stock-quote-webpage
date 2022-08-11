@@ -1,5 +1,13 @@
 Summary - ************************************************************************ this is 72 characters
 
+6. 08/11/22:
+ - Summary - create new function stock symbol lookup
+ - Details - creating new function for looking stock symbol in database; reading about moving values between React functions; reading about react hooks
+ - Goal tomorrow -
+ https://stackoverflow.com/questions/70716489/how-to-send-data-from-one-component-to-another-components-with-context-in-react
+ https://reactjs.org/docs/hooks-reference.html
+ https://reactjs.org/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often
+
 5. 08/09/22:
  - Summary -
  - Details - reading about useRef
