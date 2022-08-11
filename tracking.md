@@ -1,5 +1,17 @@
 Summary - ************************************************************************ this is 72 characters
 
+5. 08/09/22:
+ - Summary -
+ - Details - reading about useRef
+ - Goal tomorrow -
+https://mariosfakiolas.com/blog/use-useref-hook-to-store-values-you-want-to-keep-an-eye-on/
+
+4. 08/08/22:
+  - Summary -
+  - Details - clearing exhaustive-deps problem; reading about useRef
+  - Goal tomorrow -
+  https://www.smashingmagazine.com/2020/11/react-useref-hook/
+
 3. 08/07/22:
   - Summary - update quote_csv_lookup to load on start
   - Details - update quote_csv_lookup to load on start
