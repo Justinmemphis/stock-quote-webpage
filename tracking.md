@@ -1,5 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
 
+8. 08/12/22 #2:
+ - Summary - updating lookup function
+ - Details - reading about passing around props in react component; updating lookup function
+ - Goal tomorrow - keep working on lookup function
+ https://stackoverflow.com/questions/56372371/how-to-access-props-from-useeffect-hook-in-reactjs
+
 7. 08/12/22:
  - Summary - resolve exhaustive-deps lint warning on quote_csv_parse
  - Details - reading on exhaustive-deps linting warning - solved!
