@@ -5,21 +5,17 @@ import React, {
 
 export function SearchStockSymbolDatabase() {
 
+
   /*
-
-  useEffect(() => {
-    console.log(data);
-    const lookupSymbol = () => {
-      console.log(data);
-    };
-  }, [data]);
-
+  const lookupSymbol = () => {
+    console.log(data)
+  };
   */
 
   return (
     <div>
       <h1>SearchStockSymbolDatabase</h1>
-      {/* <button onClick={() => lookupSymbol()}>Lookup Symbol</button> */}
+      {/* }<button onClick={() => lookupSymbol()}>Lookup Symbol</button> */}
     </div>
   )
 };

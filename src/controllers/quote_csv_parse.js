@@ -11,8 +11,6 @@ export function ReadRemoteFile() {
   console.log(data);
 
   useEffect(() => {
-
-
     readRemoteFile(url, {
       complete: (results) => {
         console.log('---------------');
@@ -21,7 +19,7 @@ export function ReadRemoteFile() {
         setData(results.data);
       }
     });
-  }, [url]);
+  }, [url, readRemoteFile]);
 
   return (
     <div>

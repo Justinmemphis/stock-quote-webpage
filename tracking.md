@@ -1,5 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
 
+7. 08/12/22:
+ - Summary - resolve exhaustive-deps lint warning on quote_csv_parse
+ - Details - reading on exhaustive-deps linting warning - solved!
+ - Goal tomorrow -
+ https://blog.logrocket.com/understanding-react-exhaustive-deps-linting-warning/
+
 6. 08/11/22:
  - Summary - create new function stock symbol lookup
  - Details - creating new function for looking stock symbol in database; reading about moving values between React functions; reading about react hooks
