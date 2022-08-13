@@ -1,11 +1,23 @@
 Summary - ************************************************************************ this is 72 characters
 
+10. 08/13/22 #2:
+ - Summary - passing props with functional components
+ - Details - reading about createContext in react; nesting quote_csv_parse within search_stock_symbol_database
+ - Goal tomorrow - read pluralsight link below about passing props between child to parent; look into lifing up state in react (FCC link); react router passing props - see ui.dev link below
+ https://reactjs.org/docs/composition-vs-inheritance.html
+ https://reactjs.org/docs/components-and-props.html
+ https://www.pluralsight.com/guides/how-to-pass-props-object-from-child-component-to-parent-component
+ https://www.freecodecamp.org/news/what-is-lifting-state-up-in-react/
+ https://reactjs.org/docs/lifting-state-up.html
+ https://ui.dev/react-router-pass-props-to-components
+
 9. 08/13/22:
  - Summary - working on passing state from one function to another
  - Details - reading about passing state and props from one function to another
  - Goal tomorrow - look at last link
 https://codesandbox.io/s/flamboyant-chandrasekhar-fe7bt?file=/src/CompanyDetails.js
-https://stackoverflow.com/questions/70058851/return-a-prop-inside-useeffecthttps://stackoverflow.com/questions/66727049/exporting-a-state-from-hook-function-to-another-component
+https://stackoverflow.com/questions/70058851/return-a-prop-inside-useeffect
+https://stackoverflow.com/questions/66727049/exporting-a-state-from-hook-function-to-another-component
 
 8. 08/12/22 #2:
  - Summary - updating lookup function
