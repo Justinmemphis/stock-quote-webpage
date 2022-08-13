@@ -1,5 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
 
+9. 08/13/22:
+ - Summary - working on passing state from one function to another
+ - Details - reading about passing state and props from one function to another
+ - Goal tomorrow - look at last link
+https://codesandbox.io/s/flamboyant-chandrasekhar-fe7bt?file=/src/CompanyDetails.js
+https://stackoverflow.com/questions/70058851/return-a-prop-inside-useeffecthttps://stackoverflow.com/questions/66727049/exporting-a-state-from-hook-function-to-another-component
+
 8. 08/12/22 #2:
  - Summary - updating lookup function
  - Details - reading about passing around props in react component; updating lookup function
