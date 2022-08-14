@@ -1,9 +1,9 @@
 import React, {
   useEffect
 } from 'react';
-import { data } from './quote_csv_parse';
+// import { data } from './quote_csv_parse';
 
-export function SearchStockSymbolDatabase(data) {
+export default function SearchStockSymbolDatabase(data) {
 
   console.log('Pulled in data is: ' + data.results);
 

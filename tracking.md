@@ -1,5 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
 
+11. 08/14/22:
+ - Summary - consolidated functions; created form for symbol lookup
+ - Details - consolidating stock symbol search function with csv parsing; reading up on form submission in react
+ - Goal tomorrow - look at papaparse adding headers
+ https://stackoverflow.com/questions/23427384/get-form-data-in-reactjs - good answer by CloudWave below
+
 10. 08/13/22 #2:
  - Summary - passing props with functional components
  - Details - reading about createContext in react; nesting quote_csv_parse within search_stock_symbol_database
