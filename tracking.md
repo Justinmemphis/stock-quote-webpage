@@ -1,5 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
 
+12. 08/14/22 #2:
+ - Summary - add headers to symbol lookup; change styling; resolve search errors
+ - Details - add headers to papaparse readRemoteFile search; correct searching of csv file now with header; change styling on output; correct output of stock symbol lookup
+ - Goal tomorrow - try and find matching parameters (to see if there are duplicates returned from the search)
+ https://css-tricks.com/old-timey-terminal-styling/ - terminal style in CSS
+ https://stackoverflow.com/questions/51462062/loop-through-array-of-objects-check-for-a-matching-parameter-and-add-the-matchi - looking for matching parameter
+
 11. 08/14/22:
  - Summary - consolidated functions; created form for symbol lookup
  - Details - consolidating stock symbol search function with csv parsing; reading up on form submission in react

@@ -24,13 +24,12 @@ section {
 }
 
 #lookup-output {
-  display: flex;
-  flex-wrap: wrap;
-  background: green;
+  background-color: #006600;
+  color: #d9d9d9;
+  font: monospace;
+}
+
+.output-styling {
+  background-color: yellow;
   color: black;
-  width:330px;
-  margin:2px;
-  padding:5px;
-  height:20px;
-  justify-content: flex-end;
 }
