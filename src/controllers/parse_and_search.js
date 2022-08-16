@@ -36,6 +36,15 @@ export function ParseAndSearch() {
     try {
       console.log('try block');
       let intermediateNewAnswer =
+
+        /*
+        function filterByValue(data, intermediateCompanyName) {
+          return data.filter(x =>
+            Object.keys(x).some(y => x[y].toLowerCase().includes(intermediateCompanyName.toLowerCase())));
+        };
+        */
+
+
         data.find(x => {
           if (x.Name.toLowerCase().includes(intermediateCompanyName.toLowerCase())) {
             return x;
@@ -43,9 +52,17 @@ export function ParseAndSearch() {
             return null;
           }
         });
-      console.log('Intermediate Answer is: ' + JSON.stringify(intermediateNewAnswer));
+
+      let jsonNewAnswer = JSON.stringify(intermediateNewAnswer);
+
+      console.log('Intermediate Answer is: ' + jsonNewAnswer);
       setNewAnswer(intermediateNewAnswer);
-      setErrorMessage('');
+
+      if (jsonNewAnswer === '[]') {
+        setErrorMessage('No such company found!');
+      } else {
+        setErrorMessage('');
+      };
 
     } catch (err) {
       console.log('No such company found');

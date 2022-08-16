@@ -1,5 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
 
+13. 08/15/22:
+ - Summary - adjusting filter function of csv search
+ - Details - adding filter function to csv search; error message if no returned value from filter
+ - Goal tomorrow - look into hasOwn search of object
+ https://stackoverflow.com/questions/44312924/filter-array-of-objects-whose-any-properties-contains-a-value - good description of filtering an array
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn
+
 12. 08/14/22 #2:
  - Summary - add headers to symbol lookup; change styling; resolve search errors
  - Details - add headers to papaparse readRemoteFile search; correct searching of csv file now with header; change styling on output; correct output of stock symbol lookup
