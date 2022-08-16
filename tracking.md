@@ -1,6 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
 
-13. 08/15/22:
+14. 08/17/22:
+ - Summary - reading on JavaScript filter method
+ - Details - reading You Don't Know Javascript: Get Started - up through Chapter 2
+ - Goal tomorrow - read link below - regarding filter for csv to get more than one value (find only returns one value)
+ https://stackabuse.com/guide-to-javascripts-filter-method/
+
+13. 08/16/22:
  - Summary - adjusting filter function of csv search
  - Details - adding filter function to csv search; error message if no returned value from filter
  - Goal tomorrow - look into hasOwn search of object
