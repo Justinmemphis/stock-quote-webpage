@@ -1,6 +1,6 @@
 Summary - ************************************************************************ this is 72 characters
 
-14. 08/17/22:
+14. 08/16/22 #2:
  - Summary - reading on JavaScript filter method
  - Details - reading You Don't Know Javascript: Get Started - up through Chapter 2
  - Goal tomorrow - read link below - regarding filter for csv to get more than one value (find only returns one value)
