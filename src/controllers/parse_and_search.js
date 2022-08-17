@@ -6,7 +6,7 @@ import { usePapaParse } from 'react-papaparse';
 
 export function ParseAndSearch() {
   const { readRemoteFile } = usePapaParse();
-  const [data, setData] = useState([]);
+  let [data, setData] = useState([]);
   const [userCompany, setUserCompany] = useState('');
   const [newAnswer, setNewAnswer] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,24 +26,24 @@ export function ParseAndSearch() {
   }, [url, readRemoteFile]);
 
   console.log('Complete', data.length, 'records');
+  console.log('Data is: ' + JSON.stringify(data));
 
   const handleSubmit = event => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     let intermediateCompanyName = formData.get('companyname');
     setUserCompany(intermediateCompanyName);
-    console.log(intermediateCompanyName);
+    console.log('intermediateCompanyName is: ' + intermediateCompanyName);
     try {
       console.log('try block');
       let intermediateNewAnswer =
-
-        /*
+      /*
+      let intermediateNewAnswer =
         function filterByValue(data, intermediateCompanyName) {
           return data.filter(x =>
             Object.keys(x).some(y => x[y].toLowerCase().includes(intermediateCompanyName.toLowerCase())));
         };
         */
-
 
         data.find(x => {
           if (x.Name.toLowerCase().includes(intermediateCompanyName.toLowerCase())) {
@@ -52,6 +52,17 @@ export function ParseAndSearch() {
             return null;
           }
         });
+
+
+      /*
+      let newData = data.reduce(function(accumulator, current) {
+        if (current.Name === 'Agilent Technologies Inc. Common Stock') {
+          accumulator.push(current);
+        }
+        return accumulator;
+      }, []);
+      console.log('newData is: ' + JSON.stringify(newData));
+      */
 
       let jsonNewAnswer = JSON.stringify(intermediateNewAnswer);
 
