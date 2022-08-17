@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+16. 08/17/22 #2:
+ - Summary - reading on reduce
+ - Details - reading on reduce
+ - Goal tomorrow - reading on reduce - see stack overflow
+
 15. 08/17/22:
  - Summary - working with filtering csv data
  - Details - using reduce instead of filter

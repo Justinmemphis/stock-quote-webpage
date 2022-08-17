@@ -54,6 +54,7 @@ export function ParseAndSearch() {
         });
 
 
+
       /*
       let newData = data.reduce(function(accumulator, current) {
         if (current.Name === 'Agilent Technologies Inc. Common Stock') {
