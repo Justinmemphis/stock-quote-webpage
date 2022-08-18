@@ -1,5 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
 
+17. 08/18/22:
+ - Summary - implementing reduce function on symbol search
+ - Details - implementing reduce function; putting in spread operator for deep copy of array; solving infinite loop problem; reduce function is working but still not outputting results correctly
+ - Goal tomorrow -
+https://stackoverflow.com/questions/34398279/map-and-filter-an-array-at-the-same-time
+
 16. 08/17/22 #2:
  - Summary - reading on reduce
  - Details - reading on reduce

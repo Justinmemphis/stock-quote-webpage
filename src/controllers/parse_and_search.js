@@ -37,47 +37,28 @@ export function ParseAndSearch() {
     try {
       console.log('try block');
       let intermediateNewAnswer =
-      /*
-      let intermediateNewAnswer =
-        function filterByValue(data, intermediateCompanyName) {
-          return data.filter(x =>
-            Object.keys(x).some(y => x[y].toLowerCase().includes(intermediateCompanyName.toLowerCase())));
-        };
-        */
-
-        data.find(x => {
-          if (x.Name.toLowerCase().includes(intermediateCompanyName.toLowerCase())) {
-            return x;
-          } else {
-            return null;
+        data.reduce(function(filtered, company) {
+          if (company.Name.toLowerCase().includes(intermediateCompanyName.toLowerCase())) {
+            filtered.push(company);
           }
-        });
+          let dummyAnswer = [...filtered];
+          console.log('filtered is: ' + JSON.stringify(dummyAnswer));
+          return filtered;
+        }, []);
 
-
-
-      /*
-      let newData = data.reduce(function(accumulator, current) {
-        if (current.Name === 'Agilent Technologies Inc. Common Stock') {
-          accumulator.push(current);
-        }
-        return accumulator;
-      }, []);
-      console.log('newData is: ' + JSON.stringify(newData));
-      */
-
-      let jsonNewAnswer = JSON.stringify(intermediateNewAnswer);
-
-      console.log('Intermediate Answer is: ' + jsonNewAnswer);
-      setNewAnswer(intermediateNewAnswer);
-
-      if (jsonNewAnswer === '[]') {
+      if (intermediateNewAnswer === '[]') {
+        console.log('intermediateNewAnswer is zero error condition');
         setErrorMessage('No such company found!');
       } else {
+        console.log('intermediateNewAnswer is greater than zero');
         setErrorMessage('');
       };
 
+      console.log(intermediateNewAnswer);
+      setNewAnswer(intermediateNewAnswer);
+
     } catch (err) {
-      console.log('No such company found');
+      console.log('Error block');
       setNewAnswer({});
       setErrorMessage('No such company found!');
     }
