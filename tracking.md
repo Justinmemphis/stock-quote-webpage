@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+18. 08/18/22 #2:
+ - Summary - working on reduce function
+ - Details - working on reduce function
+ - Goal tomorrow - keep working on reduce function
+
 17. 08/18/22:
  - Summary - implementing reduce function on symbol search
  - Details - implementing reduce function; putting in spread operator for deep copy of array; solving infinite loop problem; reduce function is working but still not outputting results correctly

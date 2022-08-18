@@ -36,15 +36,16 @@ export function ParseAndSearch() {
     console.log('intermediateCompanyName is: ' + intermediateCompanyName);
     try {
       console.log('try block');
+      let output = [];
       let intermediateNewAnswer =
-        data.reduce(function(filtered, company) {
+        data.reduce((output, company) => {
           if (company.Name.toLowerCase().includes(intermediateCompanyName.toLowerCase())) {
-            filtered.push(company);
+            output.push(company);
           }
-          let dummyAnswer = [...filtered];
+          let dummyAnswer = [...output];
           console.log('filtered is: ' + JSON.stringify(dummyAnswer));
-          return filtered;
-        }, []);
+          return output;
+        }, output);
 
       if (intermediateNewAnswer === '[]') {
         console.log('intermediateNewAnswer is zero error condition');
