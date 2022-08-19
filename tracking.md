@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+19. 08/19/22:
+ - Summary -
+ - Details - trying for loop in symbol lookup
+ - Goal tomorrow -
+
 18. 08/18/22 #2:
  - Summary - working on reduce function
  - Details - working on reduce function

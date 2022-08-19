@@ -54,8 +54,6 @@ export function ParseAndSearch() {
         console.log('intermediateNewAnswer is greater than zero');
         setErrorMessage('');
       };
-
-      console.log(intermediateNewAnswer);
       setNewAnswer(intermediateNewAnswer);
 
     } catch (err) {
