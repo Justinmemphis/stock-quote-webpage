@@ -7,11 +7,10 @@ import { usePapaParse } from 'react-papaparse';
 export function ParseAndSearch() {
   const { readRemoteFile } = usePapaParse();
   let [data, setData] = useState([]);
-  const [userCompany, setUserCompany] = useState('');
-  const [newAnswer, setNewAnswer] = useState({});
+  const [finalCompany, setFinalCompany] = useState('');
+  const [newAnswer, setNewAnswer] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-  const url = 'nasdaq_screener_061322.csv';
-  console.log(data);
+  const url = 'nasdaq_screener_1661027821778_082022.csv';
 
   useEffect(() => {
     readRemoteFile(url, {
@@ -26,41 +25,30 @@ export function ParseAndSearch() {
   }, [url, readRemoteFile]);
 
   console.log('Complete', data.length, 'records');
-  console.log('Data is: ' + JSON.stringify(data));
 
   const handleSubmit = event => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    let intermediateCompanyName = formData.get('companyname');
-    setUserCompany(intermediateCompanyName);
-    console.log('intermediateCompanyName is: ' + intermediateCompanyName);
+    let userCompany = formData.get('companyname');
+    setFinalCompany(userCompany);
     try {
-      console.log('try block');
-      let output = [];
-      let intermediateNewAnswer =
-        data.reduce((output, company) => {
-          if (company.Name.toLowerCase().includes(intermediateCompanyName.toLowerCase())) {
-            output.push(company);
-          };
-          let dummyAnswer = [...output];
-          console.log('filtered is: ' + JSON.stringify(dummyAnswer));
-          return output;
-        }, []);
-/*
-      if (intermediateNewAnswer === '[]') {
-        console.log('intermediateNewAnswer is zero error condition');
+      let tempAnswer = [];
+      tempAnswer = data.filter(company => {
+        if (!company.Name) return false;
+        if (company.Name.toLowerCase().includes(userCompany.toLowerCase())) return true;
+        return false;
+      });
+
+      if (!tempAnswer.length) {
+        setNewAnswer([]);
         setErrorMessage('No such company found!');
       } else {
-        console.log('intermediateNewAnswer is greater than zero');
+        setNewAnswer(tempAnswer);
         setErrorMessage('');
-      };
-*/
-
-      setNewAnswer(intermediateNewAnswer);
+      }
 
     } catch (err) {
-      console.log('Error block');
-      setNewAnswer({});
+      setNewAnswer([]);
       setErrorMessage('No such company found!');
     }
   };
@@ -73,15 +61,23 @@ export function ParseAndSearch() {
         <form id='stock-quote' onSubmit={handleSubmit}>
           <input id='companyname' type="text" name='companyname' placeholder='Company Name' />
           <button type='submit'>Submit</button>
-          <h4>Currently has the NASDAQ 8,438 companies and tickers as of 06/13/22</h4>
+          <h4>Currently has the NASDAQ 8,308 companies and tickers as of 08/20/22</h4>
           <h4>US Companies (and ADRs) Only</h4>
         </form>
       </section>
       <section>
         <h3 id='lookup-output'>
-          <em>Your Input:</em> {userCompany}<br />
-          <em>Company Name:</em> {newAnswer.Name}<br />
-          <em>Symbol:</em> <span className='output-styling'>{newAnswer['Symbol']}</span><br />
+          <em>Your Input:</em> {finalCompany}<br />
+          <em>Results:</em><br />
+          *******************************<br />
+          {newAnswer.map((answer, index) => {
+            return <div key={index}>
+              *******************************<br />
+              Company Name: {answer.Name}<br />
+              Company Symbol: {answer['Symbol']}<br />
+              </div>
+          })}
+
           <span className='output-styling'>{errorMessage}</span>
         </h3>
       </section>
