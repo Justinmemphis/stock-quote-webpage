@@ -1,7 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
 
-19. 08/19/22:
+20. 08/20/22:
  - Summary -
+ - Details - submitting question to Stack Overflow about reduce method
+ - Goal tomorrow -
+
+19. 08/19/22:
+ - Summary - trying for loop in symbol lookup
  - Details - trying for loop in symbol lookup
  - Goal tomorrow -
 

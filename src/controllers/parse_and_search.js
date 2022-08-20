@@ -41,12 +41,12 @@ export function ParseAndSearch() {
         data.reduce((output, company) => {
           if (company.Name.toLowerCase().includes(intermediateCompanyName.toLowerCase())) {
             output.push(company);
-          }
+          };
           let dummyAnswer = [...output];
           console.log('filtered is: ' + JSON.stringify(dummyAnswer));
           return output;
-        }, output);
-
+        }, []);
+/*
       if (intermediateNewAnswer === '[]') {
         console.log('intermediateNewAnswer is zero error condition');
         setErrorMessage('No such company found!');
@@ -54,6 +54,8 @@ export function ParseAndSearch() {
         console.log('intermediateNewAnswer is greater than zero');
         setErrorMessage('');
       };
+*/
+
       setNewAnswer(intermediateNewAnswer);
 
     } catch (err) {
@@ -79,7 +81,7 @@ export function ParseAndSearch() {
         <h3 id='lookup-output'>
           <em>Your Input:</em> {userCompany}<br />
           <em>Company Name:</em> {newAnswer.Name}<br />
-          <em>Symbol:</em> <span className='output-styling'>{newAnswer.Symbol}</span><br />
+          <em>Symbol:</em> <span className='output-styling'>{newAnswer['Symbol']}</span><br />
           <span className='output-styling'>{errorMessage}</span>
         </h3>
       </section>
