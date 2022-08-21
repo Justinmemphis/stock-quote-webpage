@@ -1,9 +1,15 @@
+import {
+  Outlet
+} from 'react-router-dom';
+import { QuoteLookup } from '../controllers/quote_machine';
+
 function Quote() {
   return (
-    <section>
-      <h2>Stock Quote</h2>
-    </section>
+    <div>
+      <QuoteLookup />
+      <Outlet />
+    </div>
   )
-}
+};
 
-export default Quote
+export default Quote;

@@ -1,5 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
 
+22. 08/21/22:
+ - Summary - create new version on replit; start quote_machine
+ - Details - create version on replit; starting new quote_machine framework; running build on local; setting up cache-control
+ - Goal tomorrow -
+(use serve -s build to serve build)
+https://create-react-app.dev/docs/production-build/
+
 21. 08/20/22 #2:
  - Summary - switch reduce to filter in symbol lookup; update symbol list
  - Details - resolving reduce question posted to stack overflow; switching to filter for sorting through csv file array; update formatting on multiple results; update stock symbol list
