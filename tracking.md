@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+23. 08/23/22:
+ - Summary - build quote lookup basic html and logic
+ - Details - adding quote lookup basic html; adding basic quote lookup logic; adding Alpha Vantage connection options; adding environmental variables in create-react-app
+ - Goal tomorrow - get API key to work correctly - not secure long-term
+
 22. 08/21/22:
  - Summary - create new version on replit; start quote_machine
  - Details - create version on replit; starting new quote_machine framework; running build on local; setting up cache-control
