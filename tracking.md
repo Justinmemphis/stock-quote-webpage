@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+24. 08/24/22:
+ - Summary - get API connection working; setup state variables
+ - Details - get AlphaVantage API to work; setup state variables; start work on output
+ - Goal tomorrow - get output working
+
 23. 08/23/22:
  - Summary - build quote lookup basic html and logic
  - Details - adding quote lookup basic html; adding basic quote lookup logic; adding Alpha Vantage connection options; adding environmental variables in create-react-app
