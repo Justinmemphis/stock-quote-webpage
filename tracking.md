@@ -1,5 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
 
+25. 08/25/22:
+ - Summary - parse output from API into JSON object
+ - Details - parse output from API into JSON object
+ - Goal tomorrow - retrieve close data from JSON object
+https://www.javascripttutorial.net/object/convert-an-object-to-an-array-in-javascript/
+
 24. 08/24/22:
  - Summary - get API connection working; setup state variables
  - Details - get AlphaVantage API to work; setup state variables; start work on output

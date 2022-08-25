@@ -1,5 +1,4 @@
 import React, {
-  // useEffect,
   useState
 } from 'react';
 import request from 'request';
@@ -20,9 +19,6 @@ export function QuoteLookup() {
     const formData = new FormData(event.currentTarget);
     let newSymbol = formData.get('stocksymbol');
     setMySymbol(newSymbol);
-    console.log('new symbol is: ' + newSymbol);
-    console.log(typeof(newSymbol));
-    console.log('key is: ' + process.env.REACT_APP_ALPHA_VANTAGE_KEY);
 
     const options = {
       method: 'GET',
@@ -44,10 +40,17 @@ export function QuoteLookup() {
         } else if(response.statusCode !== 200) {
           console.log('Status:', response.statusCode);
           setErrorMessage('Status:', response.statusCode);
-        } else {
+        } else { // run if okay - default condition
+
           console.log(body);
-          setOutput(body);
+          console.log(typeof(body)); // answer = string
+
+          let newObject = JSON.parse(body);
+          console.log(newObject);
+          console.log(typeof(newObject)); // answer = object
+
           setErrorMessage('');
+
         }
       });
       return;
