@@ -1,5 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
 
+26. 08/26/22:
+ - Summary - extracting close dates and closing values from API object
+ - Details - extracting close dates and closing values from API object
+ - Goal tomorrow - start on D3 charting
+ https://stackoverflow.com/questions/51176519/parsing-and-getting-data-from-json
+
 25. 08/25/22:
  - Summary - parse output from API into JSON object
  - Details - parse output from API into JSON object

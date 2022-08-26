@@ -11,7 +11,10 @@ require('dotenv').config();
 export function QuoteLookup() {
   const [mySymbol, setMySymbol] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [output, setOutput] = useState({});
+  const [outputSymbol, setOutputSymbol] = useState('');
+  const [outputLastClose, setOutputLastClose] = useState('');
+  const [outputLastCloseDate, setOutputLastCloseDate] = useState('');
+  // const [output, setOutput] = useState({});
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -41,13 +44,25 @@ export function QuoteLookup() {
           console.log('Status:', response.statusCode);
           setErrorMessage('Status:', response.statusCode);
         } else { // run if okay - default condition
-
-          console.log(body);
-          console.log(typeof(body)); // answer = string
+          // console.log(body);
+          // console.log(typeof(body)); // answer = string
 
           let newObject = JSON.parse(body);
-          console.log(newObject);
-          console.log(typeof(newObject)); // answer = object
+
+          let stockSymbol = newObject['Meta Data']['2. Symbol'];
+          setOutputSymbol(stockSymbol);
+
+          // extract dates from parsed API JSON object
+          let dateArray = [];
+          Object.entries(newObject['Time Series (Daily)']).forEach(function (date) {
+            dateArray.push(date);
+          });
+          console.log(dateArray); // all close dates as objects with nested values
+          console.log(dateArray[0][0]); // first close date
+          console.log(dateArray[0][1]); // nested values of first close date
+          console.log(dateArray[0][1]['4. close']); // first close value
+          setOutputLastClose(dateArray[0][1]['4. close']);
+          setOutputLastCloseDate(dateArray[0][0]);
 
           setErrorMessage('');
 
@@ -75,7 +90,9 @@ export function QuoteLookup() {
           <em>Your Input:</em> {mySymbol}<br />
           <em>Results:</em><br />
           *******************************<br />
-
+          Stock Symbol: {outputSymbol.toUpperCase()} <br />
+          Last Close Date: {outputLastCloseDate} <br />
+          Last Close: ${outputLastClose}
           {/*
           {newAnswer.map((answer, index) => {
             return <div key={index}>
