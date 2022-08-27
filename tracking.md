@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+27. 08/27/22:
+ - Summary - create new server repo; create todo list
+ - Details - create new todo.md separate file from tracking.md; started server repo; moved process variable to server
+ - Goal tomorrow - continue work on server repo
+
 26. 08/26/22:
  - Summary - extracting close dates and closing values from API object
  - Details - extracting close dates and closing values from API object
@@ -388,9 +393,9 @@ Goal tomorrow - play around with AlphaVantage requests to get more specific data
 Sunday - weekly goals, next steps, etc.:
 - ~~get Alpha Vantage API connected~~
 - ~~research API with more calls per hour than Alpha AlphaVantage - OK as is w/ every 20 seconds~~
-- setup website to load up in React instead of raw HTML (i.e. move it to web 2.0)
-- Have stock symbol results pop through via React
-- Have stock data results pop through via React
+- ~~setup website to load up in React instead of raw HTML (i.e. move it to web 2.0)~~
+- ~~Have stock symbol results pop through via React~~
+- ~~Have stock data results pop through via React~~
 - cloud resume challenge
   - AWS certification
   - hosting w/ dynamic integration
@@ -432,14 +437,14 @@ Implementation:
 - Get ability to select certain financial variables (free cash flow, net income, etc.)
 - Compare companies?
 - Graphing results? - using D3?
-- React front-end to check stock quote etc.?
+- ~~React front-end to check stock quote etc.?~~
 
 Later options:
 - Create MongoDB database of user logins - to store saved companies, etc.
 - Create login / password input forms
 - Hash password with bcrypt library
 - Important - Have login through Auth0? Or google? -- yes, need some sort of login to a dashboard, etc. (07/05/22)
-- foreign company stock symbol lookup?  AlphaVantage can do foreign searches
+- ~~foreign company stock symbol lookup?  AlphaVantage can do foreign searches~~
 - Important - host on AWS
 - Important - testing - Jest included w/ create-react-app
 - Important - CI/CD with GitHub Actions
