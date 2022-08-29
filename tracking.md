@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+29. 08/29/22:
+ - Summary - resetting routing for development
+ - Details - resetting routing for development
+ - Goal tomorrow - switch request to axios for API call
+
 28. 08/28/22:
  - Summary - move routing out to server for passing API key securely
  - Details - move routing out to server for passing API key securely

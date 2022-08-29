@@ -25,8 +25,7 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: 'http://localhost:3000/news'
-      /*
+      url: 'https://www.alphavantage.co/query',  // later replace with 'http://localhost:3000/news'
       qs: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
@@ -34,7 +33,6 @@ export function QuoteLookup() {
         datatype: 'json',
         apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
       }
-      */
     };
 
     try {
@@ -42,12 +40,14 @@ export function QuoteLookup() {
         if (error) {
           console.log('Error:', error);
           setErrorMessage('Error:', error);
+          return;
         } else if(response.statusCode !== 200) {
           console.log('Status:', response.statusCode);
           setErrorMessage('Status:', response.statusCode);
+          return;
         } else { // run if okay - default condition
-          // console.log(body);
-          // console.log(typeof(body)); // answer = string
+          console.log(body);
+          console.log(typeof(body)); // answer = string
 
           let newObject = JSON.parse(body);
 
@@ -67,10 +67,10 @@ export function QuoteLookup() {
           setOutputLastCloseDate(dateArray[0][0]);
 
           setErrorMessage('');
+          return;
 
         }
       });
-      return;
     } catch (err) {
       setErrorMessage('No such symbol found!');
       return;
