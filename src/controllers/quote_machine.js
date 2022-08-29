@@ -25,7 +25,8 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: 'https://www.alphavantage.co/query',
+      url: 'http://localhost:3000/news'
+      /*
       qs: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
@@ -33,6 +34,7 @@ export function QuoteLookup() {
         datatype: 'json',
         apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
       }
+      */
     };
 
     try {

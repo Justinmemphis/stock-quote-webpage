@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+28. 08/28/22:
+ - Summary - move routing out to server for passing API key securely
+ - Details - move routing out to server for passing API key securely
+ - Goal tomorrow -
+
 27. 08/27/22:
  - Summary - create new server repo; create todo list
  - Details - create new todo.md separate file from tracking.md; started server repo; moved process variable to server
