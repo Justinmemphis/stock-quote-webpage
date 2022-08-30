@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+30. 08/30/22:
+ - Summary - switch API request to axios
+ - Details - switch API request to axios
+ - Goal tomorrow - get server API call working
+
 29. 08/29/22:
  - Summary - resetting routing for development
  - Details - resetting routing for development

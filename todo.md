@@ -18,5 +18,5 @@ Things to do:
 9. Include a function in python? - like csv lookup?
 10. API call for additional data?  Or additional companies to compare?
 11. User authentication with auto0 and MongoDB user databse? - save companies to lookup?
-12. Switch API request from request to axios
+12. ~~Switch API request from request to axios~~
 13. Review dependencies in package.json and remove ones not used anymore

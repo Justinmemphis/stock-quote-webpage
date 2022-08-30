@@ -1,8 +1,8 @@
 import React, {
   useState
 } from 'react';
-import request from 'request';
-require('dotenv').config();
+// import request from 'request';
+import axios from 'axios';
 
 // below somewhat copied from: https://www.alphavantage.co/documentation/ and
 // https://rapidapi.com/alphavantage/api/alpha-vantage
@@ -25,8 +25,8 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: 'https://www.alphavantage.co/query',  // later replace with 'http://localhost:3000/news'
-      qs: {
+      url: 'http://localhost:3000/quote',
+      params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         output_size: 'compact',
@@ -35,46 +35,33 @@ export function QuoteLookup() {
       }
     };
 
-    try {
-      request(options, function (error, response, body) {
-        if (error) {
-          console.log('Error:', error);
-          setErrorMessage('Error:', error);
-          return;
-        } else if(response.statusCode !== 200) {
-          console.log('Status:', response.statusCode);
-          setErrorMessage('Status:', response.statusCode);
-          return;
-        } else { // run if okay - default condition
-          console.log(body);
-          console.log(typeof(body)); // answer = string
+    axios.request(options).then((response) => {
+      console.log(response.data);
+      console.log(typeof(response.data));
 
-          let newObject = JSON.parse(body);
+      let newObject = response.data;
 
-          let stockSymbol = newObject['Meta Data']['2. Symbol'];
-          setOutputSymbol(stockSymbol);
+      let stockSymbol = newObject['Meta Data']['2. Symbol'];
+      setOutputSymbol(stockSymbol);
 
-          // extract dates from parsed API JSON object
-          let dateArray = [];
-          Object.entries(newObject['Time Series (Daily)']).forEach(function (date) {
-            dateArray.push(date);
-          });
-          console.log(dateArray); // all close dates as objects with nested values
-          console.log(dateArray[0][0]); // first close date
-          console.log(dateArray[0][1]); // nested values of first close date
-          console.log(dateArray[0][1]['4. close']); // first close value
-          setOutputLastClose(dateArray[0][1]['4. close']);
-          setOutputLastCloseDate(dateArray[0][0]);
-
-          setErrorMessage('');
-          return;
-
-        }
+      let dateArray = [];
+      Object.entries(newObject['Time Series (Daily)']).forEach(function (date) {
+        dateArray.push(date);
       });
-    } catch (err) {
-      setErrorMessage('No such symbol found!');
-      return;
-    };
+      console.log(dateArray); // all close dates as objects with nested values
+      console.log(dateArray[0][0]); // first close date
+      console.log(dateArray[0][1]); // nested values of first close date
+      console.log(dateArray[0][1]['4. close']); // first close value
+      setOutputLastClose(dateArray[0][1]['4. close']);
+      setOutputLastCloseDate(dateArray[0][0]);
+      setErrorMessage('');
+
+    }).catch((error) => {
+      console.log(error);
+      setErrorMessage('Error', error);
+    })
+
+
   };
 
   return (
