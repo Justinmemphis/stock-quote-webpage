@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+31. 08/31/22:
+ - Summary - change parameters on API call for quote; update error message
+ - Details - change parameters on API call for quote; update error message
+ - Goal tomorrow - post on replit
+
 30. 08/30/22:
  - Summary - switch API request to axios
  - Details - switch API request to axios

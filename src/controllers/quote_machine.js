@@ -31,7 +31,6 @@ export function QuoteLookup() {
         symbol: newSymbol,
         output_size: 'compact',
         datatype: 'json',
-        apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
       }
     };
 
@@ -58,7 +57,10 @@ export function QuoteLookup() {
 
     }).catch((error) => {
       console.log(error);
-      setErrorMessage('Error', error);
+      setOutputSymbol('');
+      setOutputLastClose('');
+      setOutputLastCloseDate('');
+      setErrorMessage('No such symbol found!');
     })
 
 
@@ -81,7 +83,7 @@ export function QuoteLookup() {
           *******************************<br />
           Stock Symbol: {outputSymbol.toUpperCase()} <br />
           Last Close Date: {outputLastCloseDate} <br />
-          Last Close: ${outputLastClose}
+          Last Close: ${outputLastClose} <br />
           {/*
           {newAnswer.map((answer, index) => {
             return <div key={index}>
