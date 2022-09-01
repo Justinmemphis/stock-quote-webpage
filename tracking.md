@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+32. 09/01/22:
+ - Summary - fix routing
+ - Details - update meta tag for replit routing; work on routing
+ - Goal tomorrow - AWS
+
 31. 08/31/22:
  - Summary - change parameters on API call for quote; update error message
  - Details - change parameters on API call for quote; update error message

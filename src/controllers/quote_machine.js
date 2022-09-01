@@ -25,12 +25,13 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: 'http://localhost:3000/quote',
+      url: '/quote',
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         output_size: 'compact',
         datatype: 'json',
+        apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
       }
     };
 
