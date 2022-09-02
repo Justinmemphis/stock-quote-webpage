@@ -1,5 +1,12 @@
 Summary - ************************************************************************ this is 72 characters
 
+33. 09/02/22:
+ - Summary - start on d3 chart
+ - Details - minor change to routing; install d3 packages; start to setup d3 visualization
+ - Goal tomorrow - keep working on d3 - see resources below
+ https://blog.griddynamics.com/using-d3-js-with-react-js-an-8-step-comprehensive-manual/
+ my old d3 bar chart - https://codepen.io/justinmemphis/pen/VwpeWmy?editors=1011
+
 32. 09/01/22:
  - Summary - fix routing
  - Details - update meta tag for replit routing; work on routing

@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 // import request from 'request';
 import axios from 'axios';
+// import * as d3 from 'd3';
 
 // below somewhat copied from: https://www.alphavantage.co/documentation/ and
 // https://rapidapi.com/alphavantage/api/alpha-vantage
@@ -25,13 +26,13 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: '/quote',
+      url: 'https://www.alphavantage.co/query', // change to /quote
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         output_size: 'compact',
         datatype: 'json',
-        apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
+        apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY // delete this line - also delete .env file
       }
     };
 
@@ -55,6 +56,32 @@ export function QuoteLookup() {
       setOutputLastClose(dateArray[0][1]['4. close']);
       setOutputLastCloseDate(dateArray[0][0]);
       setErrorMessage('');
+
+      /*
+
+      let margin = {
+        top: 30,
+        right: 40,
+        bottom: 30,
+        left: 50
+      };
+
+      let width = 500 - margin.left - margin.right;
+      let height = 300 - margin.top - margin.bottom;
+
+      let svg = d3.select('#chart').append('svg')
+          .attr('width', width + margin.left + margin.right)
+          .attr('height', height + margin.top + margin.bottom)
+        .append('g')
+          .attr('transform',
+                  'translate(' + margin.left + ',' + margin.top + ')');
+
+      d3.json(response.data).then(function(rawdata) {
+        let data = rawdata;
+        console.log(data);
+      })
+      */
+
 
     }).catch((error) => {
       console.log(error);
@@ -96,6 +123,9 @@ export function QuoteLookup() {
             */}
             <span className='output-styling'>{errorMessage}</span>
           </h3>
+      </section>
+      <section id="chart">
+        <h2>{outputSymbol.toUpperCase()} from 2020 to 2022:</h2>
       </section>
   </div>
   )

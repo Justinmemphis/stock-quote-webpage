@@ -33,3 +33,15 @@ section {
   background-color: yellow;
   color: black;
 }
+
+#chart {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: center;
+  background: #cccccc;
+  color: #000000;
+  width: 660px;
+  margin: auto;
+  padding: 5px;
+  justify-content: space-around;
+}
