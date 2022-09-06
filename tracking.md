@@ -1,5 +1,13 @@
 Summary - ************************************************************************ this is 72 characters
 
+34. 09/06/22:
+ - Summary - extract data for d3 chart; x axis and y axis for d3 chart
+ - Details - extract data for d3 chart; x axis and y axis for d3 chart
+ - Goal tomorrow - keep working on chart
+looping through object values/keys: https://stackoverflow.com/questions/51176519/parsing-and-getting-data-from-json - answer by Nick Tomlin
+d3 fetch is option: https://stackoverflow.com/questions/21639305/d3js-take-data-from-an-array-instead-of-a-file
+
+
 33. 09/02/22:
  - Summary - start on d3 chart
  - Details - minor change to routing; install d3 packages; start to setup d3 visualization

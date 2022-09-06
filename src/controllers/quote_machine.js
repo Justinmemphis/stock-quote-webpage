@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 // import request from 'request';
 import axios from 'axios';
-// import * as d3 from 'd3';
+import * as d3 from 'd3';
 
 // below somewhat copied from: https://www.alphavantage.co/documentation/ and
 // https://rapidapi.com/alphavantage/api/alpha-vantage
@@ -57,7 +57,7 @@ export function QuoteLookup() {
       setOutputLastCloseDate(dateArray[0][0]);
       setErrorMessage('');
 
-      /*
+      // d3 section
 
       let margin = {
         top: 30,
@@ -69,6 +69,14 @@ export function QuoteLookup() {
       let width = 500 - margin.left - margin.right;
       let height = 300 - margin.top - margin.bottom;
 
+      let parseTime = d3.timeParse('%Y-%m-%d');
+
+      let x = d3.scaleTime()
+        .domain([new Date(1900, 1, 1), new Date ()])
+        .range([0, width])
+      let y = d3.scaleLinear()
+        .range([height, 0]);
+
       let svg = d3.select('#chart').append('svg')
           .attr('width', width + margin.left + margin.right)
           .attr('height', height + margin.top + margin.bottom)
@@ -76,11 +84,37 @@ export function QuoteLookup() {
           .attr('transform',
                   'translate(' + margin.left + ',' + margin.top + ')');
 
-      d3.json(response.data).then(function(rawdata) {
-        let data = rawdata;
-        console.log(data);
-      })
-      */
+      console.log(response.data['Time Series (Daily)']);
+
+      let data = dateArray;
+      console.log(data);
+
+      data.forEach(function(d) {
+        d.date = parseTime(d[0]);
+        d.value = +d[1]['4. close'];
+      });
+
+      y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+      svg.selectAll('.bar')
+          .data(data)
+        .enter().append('rect')
+          .attr('class', 'bar')
+          .attr('x', function(d) { return x(d.date); })
+          .attr('width', 2)
+          .attr('y', function(d) { return y(d.value); })
+
+      svg.append('g')
+          .attr('transform', 'translate(0,' + height + ')')
+          .call(d3.axisBottom(x))
+          .attr('id', 'x-axis')
+
+      svg.append('g')
+          .call(d3.axisLeft(y))
+          .attr('id', 'y-axis')
+
+      // end d3 section
+
 
 
     }).catch((error) => {
