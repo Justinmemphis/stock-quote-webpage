@@ -1,12 +1,17 @@
 Summary - ************************************************************************ this is 72 characters
 
+35. 09/07/22:
+ - Summary - add css for d3 chart; finish charting
+ - Details - add css for d3 chart; finish charting
+ - Goal tomorrow - fix issue with chart adding on each time; also fix bar width on tooltip to display better
+ AlphaVantage alternative: https://iexcloud.io/
+
 34. 09/06/22:
  - Summary - extract data for d3 chart; x axis and y axis for d3 chart
  - Details - extract data for d3 chart; x axis and y axis for d3 chart
  - Goal tomorrow - keep working on chart
 looping through object values/keys: https://stackoverflow.com/questions/51176519/parsing-and-getting-data-from-json - answer by Nick Tomlin
-d3 fetch is option: https://stackoverflow.com/questions/21639305/d3js-take-data-from-an-array-instead-of-a-file
-
+d3 fetch is just an option: https://stackoverflow.com/questions/21639305/d3js-take-data-from-an-array-instead-of-a-file
 
 33. 09/02/22:
  - Summary - start on d3 chart

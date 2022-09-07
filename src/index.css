@@ -45,3 +45,23 @@ section {
   padding: 5px;
   justify-content: space-around;
 }
+
+.bar {
+  fill: red;
+}
+
+.bar:hover {
+  fill: yellow;
+}
+
+#tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 35px;
+  padding: 8px;
+  margin-top: -20px;
+  font: 12px san-serif;
+  background: yellow;
+  pointer-events: none;
+}

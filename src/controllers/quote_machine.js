@@ -30,15 +30,15 @@ export function QuoteLookup() {
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
-        output_size: 'compact',
+        outputsize: 'full',
         datatype: 'json',
         apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY // delete this line - also delete .env file
       }
     };
 
     axios.request(options).then((response) => {
-      console.log(response.data);
-      console.log(typeof(response.data));
+      //console.log(response.data);
+      //console.log(typeof(response.data));
 
       let newObject = response.data;
 
@@ -50,10 +50,10 @@ export function QuoteLookup() {
         dateArray.push(date);
       });
       console.log(dateArray); // all close dates as objects with nested values
-      console.log(dateArray[0][0]); // first close date
-      console.log(dateArray[0][1]); // nested values of first close date
-      console.log(dateArray[0][1]['4. close']); // first close value
-      setOutputLastClose(dateArray[0][1]['4. close']);
+      //console.log(dateArray[0][0]); // first close date
+      //console.log(dateArray[0][1]); // nested values of first close date
+      //console.log(dateArray[0][1]['4. close']); // first close value
+      //setOutputLastClose(dateArray[0][1]['4. close']);
       setOutputLastCloseDate(dateArray[0][0]);
       setErrorMessage('');
 
@@ -72,10 +72,14 @@ export function QuoteLookup() {
       let parseTime = d3.timeParse('%Y-%m-%d');
 
       let x = d3.scaleTime()
-        .domain([new Date(1900, 1, 1), new Date ()])
+        .domain([new Date(2000, 1, 1), new Date ()])
         .range([0, width])
       let y = d3.scaleLinear()
         .range([height, 0]);
+
+      let div = d3.select('#chart').append('div')
+          .attr('id', 'tooltip')
+          .style('display', 'none');
 
       let svg = d3.select('#chart').append('svg')
           .attr('width', width + margin.left + margin.right)
@@ -84,7 +88,7 @@ export function QuoteLookup() {
           .attr('transform',
                   'translate(' + margin.left + ',' + margin.top + ')');
 
-      console.log(response.data['Time Series (Daily)']);
+      //console.log(response.data['Time Series (Daily)']);
 
       let data = dateArray;
       console.log(data);
@@ -103,6 +107,29 @@ export function QuoteLookup() {
           .attr('x', function(d) { return x(d.date); })
           .attr('width', 2)
           .attr('y', function(d) { return y(d.value); })
+          .attr('data-date', function(d) { return d.date })
+          .attr('data-stock-price', function(d) { return d.value })
+          .attr('height', function(d) { return height - y(d.value); })
+          .on('mouseover', mouseover)
+          .on('mousemove', mousemove)
+          .on('mouseout', mouseout)
+
+      function mouseover(event, d) {
+        div
+          .style('display', 'inline');
+      };
+
+      function mousemove(event, d) {
+        div
+          .text(d.date + ' Stock Price is: ' + d.value)
+          .style('left', (event.x) + 'px')
+          .style('top', (event.y) + 'px')
+          .attr('data-date', d.date);
+      };
+
+      function mouseout(event, d) {
+        div.style('display', 'non');
+      };
 
       svg.append('g')
           .attr('transform', 'translate(0,' + height + ')')
@@ -132,7 +159,8 @@ export function QuoteLookup() {
     <div>
       <section>
         <h2>Stock Quote</h2>
-        <h3>From Alpha Vantage</h3>
+        <h3>From Alpha Vantage<br />
+        Raw (As-Traded) Historical Prices</h3>
         <form id='stock-quote' onSubmit={handleSubmit}>
           <input id='stocksymbol' type='text' name='stocksymbol' placeholder='Stock Symbol' />
           <button type='submit'>Submit</button>
@@ -146,15 +174,6 @@ export function QuoteLookup() {
           Stock Symbol: {outputSymbol.toUpperCase()} <br />
           Last Close Date: {outputLastCloseDate} <br />
           Last Close: ${outputLastClose} <br />
-          {/*
-          {newAnswer.map((answer, index) => {
-            return <div key={index}>
-              *******************************<br />
-              Company Name: {answer.Name}<br />
-              Company Symbol: {answer['Symbol']}<br />
-              </div>
-            })}
-            */}
             <span className='output-styling'>{errorMessage}</span>
           </h3>
       </section>
