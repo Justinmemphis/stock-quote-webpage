@@ -26,13 +26,12 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: 'https://www.alphavantage.co/query', // change to /quote
+      url: '/quote', // change to /quote
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         outputsize: 'full',
-        datatype: 'json',
-        apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY // delete this line - also delete .env file
+        datatype: 'json'
       }
     };
 
@@ -53,7 +52,7 @@ export function QuoteLookup() {
       //console.log(dateArray[0][0]); // first close date
       //console.log(dateArray[0][1]); // nested values of first close date
       //console.log(dateArray[0][1]['4. close']); // first close value
-      //setOutputLastClose(dateArray[0][1]['4. close']);
+      setOutputLastClose(dateArray[0][1]['4. close']);
       setOutputLastCloseDate(dateArray[0][0]);
       setErrorMessage('');
 

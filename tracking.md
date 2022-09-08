@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+36. 09/07/22 #2:
+ - Summary - put up new build for display tomorrow
+ - Details - small fix on set-state on last close; create build and post to server
+ - Goal tomorrow - fix issue with multiple searches causing problems
+
 35. 09/07/22:
  - Summary - add css for d3 chart; finish charting
  - Details - add css for d3 chart; finish charting
