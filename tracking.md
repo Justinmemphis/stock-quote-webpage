@@ -1,5 +1,11 @@
 Summary - ************************************************************************ this is 72 characters
 
+37. 09/08/22:
+ - Summary - flexible x range; delete old chart on new search; tooltip tweaking
+ - Details - change x range on chart to match data set time range; clear out chart before making new chart; adjusting tooltip date display and working on line break
+ - Goal tomorrow - get line spacing on tooltip to work! also adjust display of fill to show properly with so many data points
+Great resource on d3 charting - https://github.com/ag-grid/ag-grid-react-example/blob/ff55f75fcb27fbc6649932f0818fe7539608ede6/src-trader-dashboard/components/StockHistoricalChartPanel.jsx#L45
+
 36. 09/07/22 #2:
  - Summary - put up new build for display tomorrow
  - Details - small fix on set-state on last close; create build and post to server

@@ -26,14 +26,17 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: '/quote', // change to /quote
+      url: 'https://www.alphavantage.co/query', // change to /quote
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         outputsize: 'full',
-        datatype: 'json'
+        datatype: 'json',
+        apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
       }
     };
+
+    // deploy steps - delete .env; change url above to /quote, remove apikey above
 
     axios.request(options).then((response) => {
       //console.log(response.data);
@@ -56,7 +59,26 @@ export function QuoteLookup() {
       setOutputLastCloseDate(dateArray[0][0]);
       setErrorMessage('');
 
+      if (!dateArray) { // stop if no data
+        return;
+      }
+
       // d3 section
+
+      // clear out previous graph
+      d3.selectAll('svg')
+        .remove();
+
+      let data = dateArray;
+      console.log(data);
+
+      let parseTime = d3.timeParse('%Y-%m-%d');
+      let formatTime = d3.timeFormat('%B %d, %Y'); // 'June 30, 2015' etc.
+
+      data.forEach(function(d) {
+        d.date = parseTime(d[0]);
+        d.value = +d[1]['4. close'];
+      });
 
       let margin = {
         top: 30,
@@ -68,10 +90,10 @@ export function QuoteLookup() {
       let width = 500 - margin.left - margin.right;
       let height = 300 - margin.top - margin.bottom;
 
-      let parseTime = d3.timeParse('%Y-%m-%d');
+
 
       let x = d3.scaleTime()
-        .domain([new Date(2000, 1, 1), new Date ()])
+        .domain(d3.extent(data, d => d.date))                // [new Date(2000, 1, 1), new Date ()])
         .range([0, width])
       let y = d3.scaleLinear()
         .range([height, 0]);
@@ -86,16 +108,6 @@ export function QuoteLookup() {
         .append('g')
           .attr('transform',
                   'translate(' + margin.left + ',' + margin.top + ')');
-
-      //console.log(response.data['Time Series (Daily)']);
-
-      let data = dateArray;
-      console.log(data);
-
-      data.forEach(function(d) {
-        d.date = parseTime(d[0]);
-        d.value = +d[1]['4. close'];
-      });
 
       y.domain([0, d3.max(data, function(d) { return d.value; })]);
 
@@ -120,7 +132,7 @@ export function QuoteLookup() {
 
       function mousemove(event, d) {
         div
-          .text(d.date + ' Stock Price is: ' + d.value)
+          .text(formatTime(d.date) + '\n Stock Price is: $' + d.value)
           .style('left', (event.x) + 'px')
           .style('top', (event.y) + 'px')
           .attr('data-date', d.date);
