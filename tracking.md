@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+38. 09/09/22:
+ - Summary - chart tooltip formatting
+ - Details - chart tooltip formatting
+ - Goal tomorrow - keep working on tooltip - how to get date / price to be on separate lines; also how can it look better on mobile?
+
 37. 09/08/22:
  - Summary - flexible x range; delete old chart on new search; tooltip tweaking
  - Details - change x range on chart to match data set time range; clear out chart before making new chart; adjusting tooltip date display and working on line break

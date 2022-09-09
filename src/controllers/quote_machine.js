@@ -132,7 +132,7 @@ export function QuoteLookup() {
 
       function mousemove(event, d) {
         div
-          .text(formatTime(d.date) + '\n Stock Price is: $' + d.value)
+          .text(formatTime(d.date) + ' Close Price: $' + d.value)
           .style('left', (event.x) + 'px')
           .style('top', (event.y) + 'px')
           .attr('data-date', d.date);
