@@ -1,13 +1,10 @@
 import React, {
   useState
 } from 'react';
-// import request from 'request';
 import axios from 'axios';
 import * as d3 from 'd3';
 
-// below somewhat copied from: https://www.alphavantage.co/documentation/ and
-// https://rapidapi.com/alphavantage/api/alpha-vantage
-// 5 API requests a minute and 500 requests a day
+// AlphaVantage - 5 API requests a minute and 500 requests a day
 
 export function QuoteLookup() {
   const [mySymbol, setMySymbol] = useState('');
@@ -15,7 +12,6 @@ export function QuoteLookup() {
   const [outputSymbol, setOutputSymbol] = useState('');
   const [outputLastClose, setOutputLastClose] = useState('');
   const [outputLastCloseDate, setOutputLastCloseDate] = useState('');
-  // const [output, setOutput] = useState({});
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -26,22 +22,18 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: 'https://www.alphavantage.co/query', // change to /quote
+      url: '/quote', // change to /quote
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         outputsize: 'full',
-        datatype: 'json',
-        apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
+        datatype: 'json'
       }
     };
 
     // deploy steps - delete .env; change url above to /quote, remove apikey above
 
     axios.request(options).then((response) => {
-      //console.log(response.data);
-      //console.log(typeof(response.data));
-
       let newObject = response.data;
 
       let stockSymbol = newObject['Meta Data']['2. Symbol'];
@@ -93,7 +85,7 @@ export function QuoteLookup() {
 
 
       let x = d3.scaleTime()
-        .domain(d3.extent(data, d => d.date))                // [new Date(2000, 1, 1), new Date ()])
+        .domain(d3.extent(data, d => d.date))
         .range([0, width])
       let y = d3.scaleLinear()
         .range([height, 0]);
@@ -139,7 +131,7 @@ export function QuoteLookup() {
       };
 
       function mouseout(event, d) {
-        div.style('display', 'non');
+        div.style('display', 'none');
       };
 
       svg.append('g')

@@ -1,5 +1,21 @@
 Summary - ************************************************************************ this is 72 characters
 
+39. 09/09/22 #2:
+ - Summary -
+ - Details - remove some console.logs; create new build and post to server; update replit
+ - Goal tomorrow - next steps:
+    1. Change frontend for server
+    2. Build frontend
+    3. Update server repository
+    4. Update replit version with new server build
+    Then:
+    5. Work on AWS certification
+        - watch YouTube video
+        - do practice tests
+        - take exam and get certification
+    6. Host website on AWS - move personal webpage away from GitHub Pages
+    7. Setup github actions to run tests and then make build automatically when code is committed
+
 38. 09/09/22:
  - Summary - chart tooltip formatting
  - Details - chart tooltip formatting

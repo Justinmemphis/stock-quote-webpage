@@ -1,6 +1,6 @@
 {
   "name": "stock-quote-webpage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "stock quote webpage for looking up stock price data",
   "scripts": {
     "start": "react-scripts start",
