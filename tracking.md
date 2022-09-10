@@ -4,10 +4,10 @@ Summary - **********************************************************************
  - Summary -
  - Details - remove some console.logs; create new build and post to server; update replit
  - Goal tomorrow - next steps:
-    1. Change frontend for server
-    2. Build frontend
-    3. Update server repository
-    4. Update replit version with new server build
+    1. ~~Change frontend for server~~
+    2. ~~Build frontend~~
+    3. ~~Update server repository~~
+    4. ~~Update replit version with new server build~~
     Then:
     5. Work on AWS certification
         - watch YouTube video
