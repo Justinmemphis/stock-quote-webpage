@@ -191,7 +191,7 @@ export function QuoteLookup() {
           </h3>
       </section>
       <section id="chart">
-        <h2>{outputSymbol.toUpperCase()} from 2020 to 2022:</h2>
+        <h2>{outputSymbol.toUpperCase()} from 2002 to 2022:</h2>
       </section>
   </div>
   )
