@@ -122,10 +122,10 @@ export function QuoteLookup() {
 
      svg.selectAll('rect')
 	    .transition()
-	    .duration(2)
+	    .duration(100)
 	    .attr('y', function(d) { return y(d.value); })
 	    .attr('height', function(d) { return height - y(d.value); })
-	    .delay(function(d,i){console.log(i); return i * 2; } )
+	    .delay(function(d,i){console.log(i); return (7000-i) * 0.5; } )
 
       function mouseover(event, d) {
         div
@@ -191,7 +191,7 @@ export function QuoteLookup() {
           </h3>
       </section>
       <section id="chart">
-        <h2>{outputSymbol.toUpperCase()} from 2002 to 2022:</h2>
+        <h2>{outputSymbol.toUpperCase()} from 2002 to 2022</h2>
       </section>
   </div>
   )
