@@ -23,6 +23,10 @@ section {
   width: 330px;
 }
 
+div {
+  white-space: pre;
+}
+
 #lookup-output {
   background-color: #006600;
   color: #d9d9d9;

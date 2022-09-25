@@ -1,5 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
 
+40. 09/25/22:
+ - Setup dev environment on Ubuntu on desktop; edit dollar amount of output on stock quote and formatted to include comma for thousands and add line break in tooltip
+ - Goal tomorrow - format date output
+
 39. 09/09/22 #2:
  - Summary -
  - Details - remove some console.logs; create new build and post to server; update replit

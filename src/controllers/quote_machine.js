@@ -22,12 +22,13 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: '/quote', // change to /quote
+      url: 'https://www.alphavantage.co/query', // change to /quote
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         outputsize: 'full',
-        datatype: 'json'
+        datatype: 'json',
+	apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
       }
     };
 
@@ -47,8 +48,10 @@ export function QuoteLookup() {
       //console.log(dateArray[0][0]); // first close date
       //console.log(dateArray[0][1]); // nested values of first close date
       //console.log(dateArray[0][1]['4. close']); // first close value
-      setOutputLastClose(dateArray[0][1]['4. close']);
-      setOutputLastCloseDate(dateArray[0][0]);
+      // let closeNumber = dateArray[0][1]['4. close'].slice(0,-2);
+      let closeDate = new Date(dateArray[0][0]);
+      setOutputLastClose(dateArray[0][1]['4. close'].slice(0,-2).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      setOutputLastCloseDate(closeDate.toLocaleDateString('en-us', {weekday: "short", month: "short", day: "numeric", year:"numeric"}));
       setErrorMessage('');
 
       if (!dateArray) { // stop if no data
@@ -124,7 +127,7 @@ export function QuoteLookup() {
 
       function mousemove(event, d) {
         div
-          .text(formatTime(d.date) + ' Close Price: $' + d.value)
+          .text(formatTime(d.date) + '\n Close Price: $' + d.value)
           .style('left', (event.x) + 'px')
           .style('top', (event.y) + 'px')
           .attr('data-date', d.date);
