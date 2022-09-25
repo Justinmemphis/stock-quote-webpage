@@ -112,13 +112,20 @@ export function QuoteLookup() {
           .attr('class', 'bar')
           .attr('x', function(d) { return x(d.date); })
           .attr('width', 2)
-          .attr('y', function(d) { return y(d.value); })
+          .attr('y', function(d) { return y(0) }) // function(d) { return y(d.value); })
           .attr('data-date', function(d) { return d.date })
           .attr('data-stock-price', function(d) { return d.value })
-          .attr('height', function(d) { return height - y(d.value); })
+          .attr('height', function(d) { return height - y(0); }) // function(d) { return height - y(d.value); } 
           .on('mouseover', mouseover)
           .on('mousemove', mousemove)
           .on('mouseout', mouseout)
+
+     svg.selectAll('rect')
+	    .transition()
+	    .duration(2)
+	    .attr('y', function(d) { return y(d.value); })
+	    .attr('height', function(d) { return height - y(d.value); })
+	    .delay(function(d,i){console.log(i); return i * 2; } )
 
       function mouseover(event, d) {
         div
