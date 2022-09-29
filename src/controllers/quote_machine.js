@@ -93,9 +93,6 @@ export function QuoteLookup() {
       let y = d3.scaleLinear()
         .range([height, 0]);
 
-      let div = d3.select('#chart').append('div')
-          .attr('id', 'tooltip')
-          .style('display', 'none');
 
       let svg = d3.select('#chart').append('svg')
           .attr('width', width + margin.left + margin.right)
@@ -105,6 +102,19 @@ export function QuoteLookup() {
                   'translate(' + margin.left + ',' + margin.top + ')');
 
       y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+	svg.append('path')
+	    .datum(data)
+	    .attr('fill', 'none')
+	    .attr('stroke', 'red')
+	    .attr('stroke-width', 1.5)
+	    .attr('d', d3.line()
+		    .x(function(d) { return x(d.date) })
+		    .y(function(d) { return y(d.value) })
+	    )
+
+
+	/*
 
       svg.selectAll('.bar')
           .data(data)
@@ -127,6 +137,9 @@ export function QuoteLookup() {
 	    .attr('height', function(d) { return height - y(d.value); })
 	    .delay(function(d,i){console.log(i); return (7000-i) * 0.5; } )
 
+	*/
+	
+	    /*
       function mouseover(event, d) {
         div
           .style('display', 'inline');
@@ -143,6 +156,7 @@ export function QuoteLookup() {
       function mouseout(event, d) {
         div.style('display', 'none');
       };
+	*/
 
       svg.append('g')
           .attr('transform', 'translate(0,' + height + ')')

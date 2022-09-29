@@ -1,7 +1,14 @@
 Summary - ************************************************************************ this is 72 characters
 
+
+New plan:
+ - Change bar chart to line chart
+ - Add in default S&P 500 chart for same time period - different color
+ - Add ability to compare different companies
+
 41. 09/29/22:
  - Changed line breaks on stock symbol lookup page
+ - Changed bar chart to line chart (still need to add new tooltip)
 
 
 40. 09/25/22:
@@ -521,7 +528,7 @@ Implementation:
 - ~~Link up Yahoo Finance API (or equivalent) - AlphaVantage?~~
 - Get ability to select certain financial variables (free cash flow, net income, etc.)
 - Compare companies?
-- Graphing results? - using D3?
+- ~~Graphing results? - using D3?~~
 - ~~React front-end to check stock quote etc.?~~
 
 Later options:
