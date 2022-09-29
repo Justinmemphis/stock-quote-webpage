@@ -57,11 +57,12 @@ export function ParseAndSearch() {
     <div>
       <section>
         <h2>Symbol Lookup</h2>
-        <h3>Don't Know the Stock Symbol?  Input Stock Company Name Here</h3>
+        <h3>Don't Know the Stock Symbol?<br />
+	  Input Stock Company Name Here</h3>
         <form id='symbol-lookup' onSubmit={handleSubmit}>
           <input id='companyname' type="text" name='companyname' placeholder='Company Name' />
           <button type='submit'>Submit</button>
-          <h4>Currently has the NASDAQ 8,308 companies and tickers as of 08/20/22</h4>
+          <h4>Currently has the <br /> NASDAQ 8,308 companies and tickers <br />as of 08/20/22</h4>
           <h4>US Companies (and ADRs) Only</h4>
         </form>
       </section>

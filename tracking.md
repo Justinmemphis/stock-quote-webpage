@@ -1,5 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
 
+41. 09/29/22:
+ - Changed line breaks on stock symbol lookup page
+
+
 40. 09/25/22:
  - Setup dev environment on Ubuntu on desktop; edit dollar amount of output on stock quote and formatted to include comma for thousands and add line break in tooltip
  - Goal tomorrow - format date output
