@@ -68,7 +68,7 @@ export function QuoteLookup() {
       console.log(data);
 
       let parseTime = d3.timeParse('%Y-%m-%d');
-      let formatTime = d3.timeFormat('%B %d, %Y'); // 'June 30, 2015' etc.
+      //  let formatTime = d3.timeFormat('%B %d, %Y'); // 'June 30, 2015' etc.
 
       data.forEach(function(d) {
         d.date = parseTime(d[0]);
@@ -84,8 +84,6 @@ export function QuoteLookup() {
 
       let width = 500 - margin.left - margin.right;
       let height = 300 - margin.top - margin.bottom;
-
-
 
       let x = d3.scaleTime()
         .domain(d3.extent(data, d => d.date))
@@ -113,8 +111,8 @@ export function QuoteLookup() {
 		    .y(function(d) { return y(d.value) })
 	    )
 
-
 	/*
+
 
       svg.selectAll('.bar')
           .data(data)
