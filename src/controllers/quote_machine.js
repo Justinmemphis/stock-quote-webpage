@@ -68,7 +68,8 @@ export function QuoteLookup() {
       console.log(data);
 
       let parseTime = d3.timeParse('%Y-%m-%d');
-      //  let formatTime = d3.timeFormat('%B %d, %Y'); // 'June 30, 2015' etc.
+      let formatDate = d3.timeFormat('%B %d, %Y'); // 'June 30, 2015' etc.
+      let bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
       data.forEach(function(d) {
         d.date = parseTime(d[0]);
@@ -110,6 +111,114 @@ export function QuoteLookup() {
 		    .x(function(d) { return x(d.date) })
 		    .y(function(d) { return y(d.value) })
 	    )
+
+	let focus = svg.append('g')
+	    .style('display', 'none');
+
+	// append the x line
+	focus.append('line')
+	    .attr('class', 'x')
+	    .style('stroke', 'blue')
+	    .style('stroke-dasharray', '3.3')
+	    .style('opacity', 0.5)
+	    .attr('y1', 0)
+	    .attr('y2', height);
+
+	// append the y line
+	focus.append('line')
+	    .attr('class', 'y')
+	    .style('stroke', 'blue')
+	    .style('stroke-dasharray', '3.3')
+	    .style('opacity', 0.5)
+	    .attr('x1', width)
+	    .attr('x2', width);
+	
+	// append the circle at the intersection
+	focus.append('circle')
+	    .attr('class', 'y')
+	    .style('fill', 'none')
+	    .style('stroke', 'blue')
+	    .attr('r', 4);
+
+	// place the value at the intersection
+	focus.append('text')
+	    .attr('class', 'y1')
+	    .style('stroke', 'white')
+	    .style('stroke-width', '3.5px')
+	    .style('opacity', 0.8)
+	    .attr('dx', 8)
+	    .attr('dy', '-.3em');
+	focus.append('text')
+	    .attr('class', 'y2')
+	    .attr('dx', 8)
+	    .attr('dy', '-.3em');
+
+	// place the date at the intersection
+	focus.append('text')
+	    .attr('class', 'y3')
+	    .style('stroke', 'white')
+	    .style('stroke-width', '3.5px')
+	    .style('opacity', 0.8)
+	    .attr('dx', 8)
+	    .attr('dy', '1em');
+	focus.append('text')
+	    .attr('class', 'y4')
+	    .attr('dx', 8)
+	    .attr('dy', '1em');
+
+	// append the rectangle to capture mouse
+	svg.append('rect')
+	    .attr('width', width)
+	    .attr('height', height)
+	    .style('fill', 'none')
+	    .style('pointer-events', 'all')
+	    .on('mouseover', function() { focus.style('display', null); })
+	    .on('mouseout', function() { focus.style('display', 'none'); })
+	    .on('mousemove', mousemove);
+
+	function mousemove() {
+		var x0 = x.invert(d3.pointer(event, +this)[0]),
+			i = bisectDate(data, x0, 1),
+			d0 = data[i - 1],
+			d1 = data[i],
+			d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+
+		focus.select('circle.y')
+			.attr('transform',
+				'translate(' + x(d.date) + ',' + y(d.value) + ')');
+
+		focus.select('text.y1')
+			.attr('transform',
+				'translate(' + x(d.date) + ',' + y(d.value) + ')')
+			.text(d.value);
+
+		focus.select('text.y2')
+			.attr('transform',
+				'translate(' + x(d.date) + ',' + y(d.value) + ')')
+			.text(d.value);
+	
+		focus.select('text.y3')
+			.attr('transform',
+				'translate(' + x(d.date) + ',' + y(d.value) + ')')
+			.text(formatDate(d.date));
+
+		focus.select('text.y4')
+			.attr('transform',
+				'translate(' + x(d.date) + ',' + y(d.value) + ')')
+			.text(formatDate(d.date));
+		
+		focus.select('.x')
+			.attr('transform',
+				'translate(' + x(d.date) + ',' + y(d.value) + ')')
+			.attr('y2', height - y(d.value));
+
+		focus.select('.y')
+			.attr('transform',
+				'translate(' + x(d.date) + ',' + y(d.value) + ')')
+			.attr('x2', width + width);
+
+	}
+
 
 	/*
 
@@ -166,7 +275,6 @@ export function QuoteLookup() {
           .attr('id', 'y-axis')
 
       // end d3 section
-
 
 
     }).catch((error) => {

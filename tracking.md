@@ -1,8 +1,15 @@
 Summary - ************************************************************************ this is 72 characters
 
+42. 10/02/22:
+ - Added complex tooltip - not currently working due to mousemove issue
+Re: new plan below - already switched to bar chart.  Add tooltip and then look into Hacktoberfest
+
+https://bl.ocks.org/d3noob/40bfe16d0b344852df92d97510d2825e - great tooltip
+https://sharkcoder.com/data-visualization/d3-line-chart - great walkthrough of chart step by step
+
 
 New plan:
- - Change bar chart to line chart
+ - ~~Change bar chart to line chart~~
  - Add in default S&P 500 chart for same time period - different color
  - Add ability to compare different companies
 
