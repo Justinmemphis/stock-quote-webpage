@@ -1,5 +1,8 @@
 Summary - ************************************************************************ this is 72 characters
 
+43. 10/03/22:
+ -  need to fix data coming in for charting so mousemove works correctly; reformating data structure
+
 42. 10/02/22:
  - Added complex tooltip - not currently working due to mousemove issue
 Re: new plan below - already switched to bar chart.  Add tooltip and then look into Hacktoberfest

@@ -60,16 +60,28 @@ export function QuoteLookup() {
 
       // d3 section
 
-      // clear out previous graph
-      d3.selectAll('svg')
-        .remove();
-
-      let data = dateArray;
-      console.log(data);
-
       let parseTime = d3.timeParse('%Y-%m-%d');
       let formatDate = d3.timeFormat('%B %d, %Y'); // 'June 30, 2015' etc.
       let bisectDate = d3.bisector(function(d) { return d.date; }).left;
+
+
+      // clear out previous graph
+      d3.selectAll('svg')
+        .remove();
+	
+	// need to fix below section - should probably resolve retrieval of object.keys above once and for all 10/03/22
+
+      let newArray = [];
+      for (var i = 0; i < dateArray.length; i++) {
+	      let date = parseTime(i[0]);
+	      let close = +i[1]['4. close'];
+	newArray.push({date, close});
+      };
+      console.log(newArray);
+	
+
+      let data = dateArray;
+      console.log(data);
 
       data.forEach(function(d) {
         d.date = parseTime(d[0]);
@@ -177,7 +189,7 @@ export function QuoteLookup() {
 	    .on('mousemove', mousemove);
 
 	function mousemove() {
-		var x0 = x.invert(d3.pointer(event, +this)[0]),
+		var x0 = x.invert(d3.pointer(event, this)[0]),
 			i = bisectDate(data, x0, 1),
 			d0 = data[i - 1],
 			d1 = data[i],
