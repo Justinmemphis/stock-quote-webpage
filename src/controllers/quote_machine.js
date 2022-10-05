@@ -41,16 +41,32 @@ export function QuoteLookup() {
       setOutputSymbol(stockSymbol);
 
       let dateArray = [];
+
+	let cVar = Object.entries(newObject['Time Series (Daily)']); // pull out the main section we want
+	console.log(cVar);
+
+	function formatArray (date) {  // create new array with pairs
+		let aVar = date[0];
+		let bVar = date[1]['4. close'];
+		//console.log('[' + aVar + ', ' + bVar + ']');
+		dateArray.push([aVar,bVar]);
+	};
+
+	cVar.forEach(formatArray);
+
+
+	    /*   this is working - keep this section
       Object.entries(newObject['Time Series (Daily)']).forEach(function (date) {
         dateArray.push(date);
       });
-      console.log(dateArray); // all close dates as objects with nested values
-      //console.log(dateArray[0][0]); // first close date
+      */
+     // console.log(dateArray); // all close dates as arrays in pair [date, close value]
+      //console.log(dateArray[0]); // first close date
       //console.log(dateArray[0][1]); // nested values of first close date
       //console.log(dateArray[0][1]['4. close']); // first close value
       // let closeNumber = dateArray[0][1]['4. close'].slice(0,-2);
       let closeDate = new Date(dateArray[0][0]);
-      setOutputLastClose(dateArray[0][1]['4. close'].slice(0,-2).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      setOutputLastClose(dateArray[0][1].slice(0,-2).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       setOutputLastCloseDate(closeDate.toLocaleDateString('en-us', {weekday: "short", month: "short", day: "numeric", year:"numeric"}));
       setErrorMessage('');
 
@@ -60,33 +76,25 @@ export function QuoteLookup() {
 
       // d3 section
 
+      // clear out previous graph
+      d3.selectAll('svg')
+        .remove();
+
+
       let parseTime = d3.timeParse('%Y-%m-%d');
       let formatDate = d3.timeFormat('%B %d, %Y'); // 'June 30, 2015' etc.
       let bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
-
-      // clear out previous graph
-      d3.selectAll('svg')
-        .remove();
-	
-	// need to fix below section - should probably resolve retrieval of object.keys above once and for all 10/03/22
-
-      let newArray = [];
-      for (var i = 0; i < dateArray.length; i++) {
-	      let date = parseTime(i[0]);
-	      let close = +i[1]['4. close'];
-	newArray.push({date, close});
-      };
-      console.log(newArray);
-	
-
       let data = dateArray;
-      console.log(data);
+     //console.log(data);
 
       data.forEach(function(d) {
-        d.date = parseTime(d[0]);
-        d.value = +d[1]['4. close'];
+        d.date = parseTime(d[0]); 
+        d.value = +d[1];
       });
+
+      console.log(data[0].date);
+      console.log(data[0].value);
 
       let margin = {
         top: 30,
@@ -98,12 +106,21 @@ export function QuoteLookup() {
       let width = 500 - margin.left - margin.right;
       let height = 300 - margin.top - margin.bottom;
 
+	let x = d3.scaleTime().range([0, width]);
+	let y = d3.scaleLinear().range([height, 0]);
+
+	x.domain(d3.extent(data, function(d) { return d.date; }));
+	y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+	/* old
+
       let x = d3.scaleTime()
         .domain(d3.extent(data, d => d.date))
         .range([0, width])
       let y = d3.scaleLinear()
         .range([height, 0]);
 
+	*/
 
       let svg = d3.select('#chart').append('svg')
           .attr('width', width + margin.left + margin.right)
@@ -112,8 +129,11 @@ export function QuoteLookup() {
           .attr('transform',
                   'translate(' + margin.left + ',' + margin.top + ')');
 
-      y.domain([0, d3.max(data, function(d) { return d.value; })]);
+	var lineSvg = svg.append('g');
+	    
+//      y.domain([0, d3.max(data, function(d) { return d.value; })]);  old
 
+	    /* old
 	svg.append('path')
 	    .datum(data)
 	    .attr('fill', 'none')
@@ -123,9 +143,21 @@ export function QuoteLookup() {
 		    .x(function(d) { return x(d.date) })
 		    .y(function(d) { return y(d.value) })
 	    )
+	    */
 
 	let focus = svg.append('g')
 	    .style('display', 'none');
+
+	lineSvg.append('path')
+	    .datum(data)
+	    .attr('fill', 'none')
+	    .attr('stroke', 'red')
+	    .attr('stroke-width', 1.5)
+	    .attr('d', d3.line()
+		    .x(function(d) { return x(d.date) })
+		    .y(function(d) { return y(d.value) })
+	    );
+	
 
 	// append the x line
 	focus.append('line')
@@ -189,7 +221,7 @@ export function QuoteLookup() {
 	    .on('mousemove', mousemove);
 
 	function mousemove() {
-		var x0 = x.invert(d3.pointer(event, this)[0]),
+		var x0 = x.invert(d3.pointer(event,this)[0]),
 			i = bisectDate(data, x0, 1),
 			d0 = data[i - 1],
 			d1 = data[i],
@@ -280,11 +312,9 @@ export function QuoteLookup() {
       svg.append('g')
           .attr('transform', 'translate(0,' + height + ')')
           .call(d3.axisBottom(x))
-          .attr('id', 'x-axis')
 
       svg.append('g')
           .call(d3.axisLeft(y))
-          .attr('id', 'y-axis')
 
       // end d3 section
 
