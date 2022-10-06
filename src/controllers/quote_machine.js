@@ -43,7 +43,7 @@ export function QuoteLookup() {
       let dateArray = [];
 
 	let cVar = Object.entries(newObject['Time Series (Daily)']); // pull out the main section we want
-	console.log(cVar);
+	//console.log(cVar);
 
 	function formatArray (date) {  // create new array with pairs
 		let aVar = date[0];
@@ -60,7 +60,7 @@ export function QuoteLookup() {
         dateArray.push(date);
       });
       */
-     // console.log(dateArray); // all close dates as arrays in pair [date, close value]
+      //console.log(dateArray); // all close dates as arrays in pair [date, close value]
       //console.log(dateArray[0]); // first close date
       //console.log(dateArray[0][1]); // nested values of first close date
       //console.log(dateArray[0][1]['4. close']); // first close value
@@ -82,7 +82,7 @@ export function QuoteLookup() {
 
 
       let parseTime = d3.timeParse('%Y-%m-%d');
-      let formatDate = d3.timeFormat('%B %d, %Y'); // 'June 30, 2015' etc.
+      // let formatDate = d3.timeFormat('%d-%b'); // "was %B %d, %Y - 'June 30, 2015' etc.
       let bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
       let data = dateArray;
@@ -93,6 +93,7 @@ export function QuoteLookup() {
         d.value = +d[1];
       });
 
+      console.log(data);
       console.log(data[0].date);
       console.log(data[0].value);
 
@@ -221,45 +222,49 @@ export function QuoteLookup() {
 	    .on('mousemove', mousemove);
 
 	function mousemove() {
-		var x0 = x.invert(d3.pointer(event,this)[0]),
+		var x0 = x.invert(d3.pointer(event,this)[0]),            //this)[0]),
 			i = bisectDate(data, x0, 1),
 			d0 = data[i - 1],
 			d1 = data[i],
 			d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
-		focus.select('circle.y')
+		focus.select('circle.y')	// this is the circle around the data point
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')');
+		// problem - cannot read property of undefined "date"
 
-		focus.select('text.y1')
+
+		/* if circle above starts working - implement the rest of this code
+		focus.select('text.y1') // text 
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')')
 			.text(d.value);
 
-		focus.select('text.y2')
+		focus.select('text.y2') // text
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')')
 			.text(d.value);
 	
-		focus.select('text.y3')
+		focus.select('text.y3') // text
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')')
 			.text(formatDate(d.date));
 
-		focus.select('text.y4')
+		focus.select('text.y4') // text
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')')
 			.text(formatDate(d.date));
 		
-		focus.select('.x')
+		focus.select('.x') // dotted line
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')')
 			.attr('y2', height - y(d.value));
 
-		focus.select('.y')
+		focus.select('.y') // dotted line
 			.attr('transform',
-				'translate(' + x(d.date) + ',' + y(d.value) + ')')
+				'translate(' + width * -1 + ',' + y(d[1]) + ')')
 			.attr('x2', width + width);
+			*/
 
 	}
 

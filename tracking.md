@@ -1,5 +1,8 @@
 Summary - ************************************************************************ this is 72 characters
 
+45. 10/06/22:
+ - keep working on mousemove function
+
 44. 10/05/22:
  - changed data to incoming pair
  - data format changed correctly - still having same issue with charting for tooltip
