@@ -151,6 +151,7 @@ export function QuoteLookup() {
 
 	lineSvg.append('path')
 	    .datum(data)
+	    .attr('class', 'line')
 	    .attr('fill', 'none')
 	    .attr('stroke', 'red')
 	    .attr('stroke-width', 1.5)
@@ -222,12 +223,13 @@ export function QuoteLookup() {
 	    .on('mousemove', mousemove);
 
 	function mousemove() {
-		var x0 = x.invert(d3.pointer(event,this)[0]),            //this)[0]),
+		var x0 = x.invert(d3.pointer(event,this)[0]),
 			i = bisectDate(data, x0, 1),
 			d0 = data[i - 1],
 			d1 = data[i],
 			d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-
+		
+		console.log(x0,i,d0,d1,d);
 		focus.select('circle.y')	// this is the circle around the data point
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')');
