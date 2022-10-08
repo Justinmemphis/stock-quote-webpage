@@ -81,21 +81,7 @@ export function QuoteLookup() {
         .remove();
 
 
-      let parseTime = d3.timeParse('%Y-%m-%d');
-      // let formatDate = d3.timeFormat('%d-%b'); // "was %B %d, %Y - 'June 30, 2015' etc.
-      let bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
-      let data = dateArray;
-     //console.log(data);
-
-      data.forEach(function(d) {
-        d.date = parseTime(d[0]); 
-        d.value = +d[1];
-      });
-
-      console.log(data);
-      console.log(data[0].date);
-      console.log(data[0].value);
 
       let margin = {
         top: 30,
@@ -103,15 +89,17 @@ export function QuoteLookup() {
         bottom: 30,
         left: 50
       };
-
       let width = 500 - margin.left - margin.right;
       let height = 300 - margin.top - margin.bottom;
+      
+      let parseTime = d3.timeParse('%Y-%m-%d');
+      let formatDate = d3.timeFormat('%d-%b'); // "was %B %d, %Y - 'June 30, 2015' etc.
+      let bisectDate = d3.bisector(function(d) { return d.date; }).left;
+      
 
 	let x = d3.scaleTime().range([0, width]);
 	let y = d3.scaleLinear().range([height, 0]);
 
-	x.domain(d3.extent(data, function(d) { return d.date; }));
-	y.domain([0, d3.max(data, function(d) { return d.value; })]);
 
 	/* old
 
@@ -131,8 +119,27 @@ export function QuoteLookup() {
                   'translate(' + margin.left + ',' + margin.top + ')');
 
 	var lineSvg = svg.append('g');
-	    
-//      y.domain([0, d3.max(data, function(d) { return d.value; })]);  old
+	
+	let focus = svg.append('g')
+	    .style('display', 'none');
+	 
+
+        let data = dateArray;
+
+      
+	data.forEach(function(d) {
+          d.date = parseTime(d[0]); 
+          d.value = +d[1];
+        });
+
+      console.log(data);
+      console.log(data[0].date);
+      console.log(data[0].value);
+
+	x.domain(d3.extent(data, function(d) { return d.date; }));
+	y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+	//      y.domain([0, d3.max(data, function(d) { return d.value; })]);  old
 
 	    /* old
 	svg.append('path')
@@ -146,11 +153,8 @@ export function QuoteLookup() {
 	    )
 	    */
 
-	let focus = svg.append('g')
-	    .style('display', 'none');
-
 	lineSvg.append('path')
-	    .datum(data)
+	    .data([data])
 	    .attr('class', 'line')
 	    .attr('fill', 'none')
 	    .attr('stroke', 'red')
@@ -160,6 +164,14 @@ export function QuoteLookup() {
 		    .y(function(d) { return y(d.value) })
 	    );
 	
+      // X axis
+      svg.append('g')
+          .attr('transform', 'translate(0,' + height + ')')
+          .call(d3.axisBottom(x))
+
+      // Y axis`
+      svg.append('g')
+          .call(d3.axisLeft(y))
 
 	// append the x line
 	focus.append('line')
@@ -222,21 +234,22 @@ export function QuoteLookup() {
 	    .on('mouseout', function() { focus.style('display', 'none'); })
 	    .on('mousemove', mousemove);
 
-	function mousemove() {
-		var x0 = x.invert(d3.pointer(event,this)[0]),
-			i = bisectDate(data, x0, 1),
-			d0 = data[i - 1],
-			d1 = data[i],
-			d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+	function mousemove(event) {
+		var testMe = d3.pointer(event,this)[0];
+		console.log(testMe);
+		var x0 = x.invert(d3.pointer(event,this)[0]);
+		var index = bisectDate(data, x0, 1);
+		var d0 = data[index - 1];
+		var d1 = data[index];
+		var d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 		
-		console.log(x0,i,d0,d1,d);
+		console.log(x0,index,d0,d1,d);
 		focus.select('circle.y')	// this is the circle around the data point
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')');
 		// problem - cannot read property of undefined "date"
 
 
-		/* if circle above starts working - implement the rest of this code
 		focus.select('text.y1') // text 
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')')
@@ -266,7 +279,6 @@ export function QuoteLookup() {
 			.attr('transform',
 				'translate(' + width * -1 + ',' + y(d[1]) + ')')
 			.attr('x2', width + width);
-			*/
 
 	}
 
@@ -316,12 +328,6 @@ export function QuoteLookup() {
       };
 	*/
 
-      svg.append('g')
-          .attr('transform', 'translate(0,' + height + ')')
-          .call(d3.axisBottom(x))
-
-      svg.append('g')
-          .call(d3.axisLeft(y))
 
       // end d3 section
 
