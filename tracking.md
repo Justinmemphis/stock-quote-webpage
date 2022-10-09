@@ -1,5 +1,9 @@
 Summary - ************************************************************************ this is 72 characters
 
+48. 10/09/22:
+ - making progress on mousemove tooltip
+https://stackoverflow.com/questions/68813801/d3-bisect-dates-always-returns-0-or-30 --list needs to be in ascending order
+
 47. 10/08/22:
  - keep working on tooltip mousemove function
 

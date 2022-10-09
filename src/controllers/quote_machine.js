@@ -94,7 +94,6 @@ export function QuoteLookup() {
       
       let parseTime = d3.timeParse('%Y-%m-%d');
       let formatDate = d3.timeFormat('%d-%b'); // "was %B %d, %Y - 'June 30, 2015' etc.
-      let bisectDate = d3.bisector(function(d) { return d.date; }).left;
       
 
 	let x = d3.scaleTime().range([0, width]);
@@ -234,16 +233,36 @@ export function QuoteLookup() {
 	    .on('mouseout', function() { focus.style('display', 'none'); })
 	    .on('mousemove', mousemove);
 
+
+      	let bisectDate = d3.bisector(d => d.date).left;
+
 	function mousemove(event) {
-		var testMe = d3.pointer(event,this)[0];
+	
+		var x0 = x.invert(d3.pointer(event,this)[0]),
+			i = bisectDate(data.reverse(), x0, 2), // reversed list - still need to up index more
+			d0 = data[i - 1],
+			d1 = data[i],
+			d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+
+		console.log('x0: ',x0);
+		console.log('i: ', i);
+		console.log('d0: ',d0);
+		console.log('d1: ',d1);
+		console.log('d: ',d);
+		/*
+		var testMe = d3.pointer(event,this);
 		console.log(testMe);
-		var x0 = x.invert(d3.pointer(event,this)[0]);
-		var index = bisectDate(data, x0, 1);
+
+		var x0 = x.invert(d3.pointer(event,this)[0]); // I think this is working correctly
+		console.log(x0);
+
+		var index = bisectDate(data, new Date()); 
+			// the above is not working correctly - just going to 1
 		var d0 = data[index - 1];
-		var d1 = data[index];
+		var d1 = data[index]; 
 		var d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-		
-		console.log(x0,index,d0,d1,d);
+		*/	
+
 		focus.select('circle.y')	// this is the circle around the data point
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')');
