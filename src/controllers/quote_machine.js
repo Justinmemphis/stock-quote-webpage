@@ -93,8 +93,7 @@ export function QuoteLookup() {
       let height = 300 - margin.top - margin.bottom;
       
       let parseTime = d3.timeParse('%Y-%m-%d');
-      let formatDate = d3.timeFormat('%B %d, %Y'); // "was %B %d, %Y - 'June 30, 2015' etc.
-      
+      let formatDate = d3.timeFormat('%b %d, %Y'); // "was %B %d, %Y - 'June 30, 2015' etc.
 
 	let x = d3.scaleTime().range([0, width]);
 	let y = d3.scaleLinear().range([height, 0]);
@@ -230,12 +229,12 @@ export function QuoteLookup() {
 		focus.select('text.y1') // text 
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')')
-			.text(d.value);
+			.text('$' + d.value);
 
 		focus.select('text.y2') // text
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')')
-			.text(d.value);
+			.text('$' + d.value);
 	
 		focus.select('text.y3') // text
 			.attr('transform',
