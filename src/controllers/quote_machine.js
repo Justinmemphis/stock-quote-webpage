@@ -93,22 +93,11 @@ export function QuoteLookup() {
       let height = 300 - margin.top - margin.bottom;
       
       let parseTime = d3.timeParse('%Y-%m-%d');
-      let formatDate = d3.timeFormat('%d-%b'); // "was %B %d, %Y - 'June 30, 2015' etc.
+      let formatDate = d3.timeFormat('%B %d, %Y'); // "was %B %d, %Y - 'June 30, 2015' etc.
       
 
 	let x = d3.scaleTime().range([0, width]);
 	let y = d3.scaleLinear().range([height, 0]);
-
-
-	/* old
-
-      let x = d3.scaleTime()
-        .domain(d3.extent(data, d => d.date))
-        .range([0, width])
-      let y = d3.scaleLinear()
-        .range([height, 0]);
-
-	*/
 
       let svg = d3.select('#chart').append('svg')
           .attr('width', width + margin.left + margin.right)
@@ -121,10 +110,8 @@ export function QuoteLookup() {
 	
 	let focus = svg.append('g')
 	    .style('display', 'none');
-	 
 
         let data = dateArray;
-
       
 	data.forEach(function(d) {
           d.date = parseTime(d[0]); 
@@ -137,20 +124,6 @@ export function QuoteLookup() {
 
 	x.domain(d3.extent(data, function(d) { return d.date; }));
 	y.domain([0, d3.max(data, function(d) { return d.value; })]);
-
-	//      y.domain([0, d3.max(data, function(d) { return d.value; })]);  old
-
-	    /* old
-	svg.append('path')
-	    .datum(data)
-	    .attr('fill', 'none')
-	    .attr('stroke', 'red')
-	    .attr('stroke-width', 1.5)
-	    .attr('d', d3.line()
-		    .x(function(d) { return x(d.date) })
-		    .y(function(d) { return y(d.value) })
-	    )
-	    */
 
 	lineSvg.append('path')
 	    .data([data])
@@ -233,41 +206,26 @@ export function QuoteLookup() {
 	    .on('mouseout', function() { focus.style('display', 'none'); })
 	    .on('mousemove', mousemove);
 
-
-      	let bisectDate = d3.bisector(d => d.date).left;
+	let bisectDate = d3.bisector((d, x) => x - d.date).left;
 
 	function mousemove(event) {
 	
 		var x0 = x.invert(d3.pointer(event,this)[0]),
-			i = bisectDate(data.reverse(), x0, 2), // reversed list - still need to up index more
+			i = bisectDate(data, x0, 1), // reversed list - still need to up index more
 			d0 = data[i - 1],
 			d1 = data[i],
 			d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-
+		/*
 		console.log('x0: ',x0);
 		console.log('i: ', i);
 		console.log('d0: ',d0);
 		console.log('d1: ',d1);
 		console.log('d: ',d);
-		/*
-		var testMe = d3.pointer(event,this);
-		console.log(testMe);
-
-		var x0 = x.invert(d3.pointer(event,this)[0]); // I think this is working correctly
-		console.log(x0);
-
-		var index = bisectDate(data, new Date()); 
-			// the above is not working correctly - just going to 1
-		var d0 = data[index - 1];
-		var d1 = data[index]; 
-		var d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-		*/	
+		*/
 
 		focus.select('circle.y')	// this is the circle around the data point
 			.attr('transform',
 				'translate(' + x(d.date) + ',' + y(d.value) + ')');
-		// problem - cannot read property of undefined "date"
-
 
 		focus.select('text.y1') // text 
 			.attr('transform',
@@ -300,53 +258,6 @@ export function QuoteLookup() {
 			.attr('x2', width + width);
 
 	}
-
-
-	/*
-
-
-      svg.selectAll('.bar')
-          .data(data)
-        .enter().append('rect')
-          .attr('class', 'bar')
-          .attr('x', function(d) { return x(d.date); })
-          .attr('width', 2)
-          .attr('y', function(d) { return y(0) }) // function(d) { return y(d.value); })
-          .attr('data-date', function(d) { return d.date })
-          .attr('data-stock-price', function(d) { return d.value })
-          .attr('height', function(d) { return height - y(0); }) // function(d) { return height - y(d.value); } 
-          .on('mouseover', mouseover)
-          .on('mousemove', mousemove)
-          .on('mouseout', mouseout)
-
-     svg.selectAll('rect')
-	    .transition()
-	    .duration(100)
-	    .attr('y', function(d) { return y(d.value); })
-	    .attr('height', function(d) { return height - y(d.value); })
-	    .delay(function(d,i){console.log(i); return (7000-i) * 0.5; } )
-
-	*/
-	
-	    /*
-      function mouseover(event, d) {
-        div
-          .style('display', 'inline');
-      };
-
-      function mousemove(event, d) {
-        div
-          .text(formatTime(d.date) + '\n Close Price: $' + d.value)
-          .style('left', (event.x) + 'px')
-          .style('top', (event.y) + 'px')
-          .attr('data-date', d.date);
-      };
-
-      function mouseout(event, d) {
-        div.style('display', 'none');
-      };
-	*/
-
 
       // end d3 section
 
