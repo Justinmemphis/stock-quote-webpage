@@ -198,7 +198,7 @@ export function QuoteLookup() {
 
 	// append the rectangle to capture mouse
 	svg.append('rect')
-	    .attr('width', width)
+	    .attr('width', '660px')
 	    .attr('height', height)
 	    .style('fill', 'none')
 	    .style('pointer-events', 'all')
