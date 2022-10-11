@@ -1,5 +1,10 @@
 Summary - ************************************************************************ this is 72 characters
 
+49. 10/10/22:
+ - finished tooltip!  also minor date/value formatting on tooltip; also closed some issues with switch to line chart instead of bar charts
+ - for tomorrow - upload current working development version to replit as a working prototype
+ - then - create production build and change server version build on github and replit - just override current replit build
+
 48. 10/09/22:
  - making progress on mousemove tooltip
 https://stackoverflow.com/questions/68813801/d3-bisect-dates-always-returns-0-or-30 --list needs to be in ascending order
