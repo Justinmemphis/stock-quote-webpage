@@ -1,5 +1,8 @@
 Summary - ************************************************************************ this is 72 characters
 
+50. 10/14/22:
+ - create new build; upload to replit server
+
 49. 10/10/22:
  - finished tooltip!  also minor date/value formatting on tooltip; also closed some issues with switch to line chart instead of bar charts
  - for tomorrow - upload current working development version to replit as a working prototype

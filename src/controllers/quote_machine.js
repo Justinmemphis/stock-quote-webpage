@@ -22,13 +22,12 @@ export function QuoteLookup() {
 
     const options = {
       method: 'GET',
-      url: 'https://www.alphavantage.co/query', // change to /quote
+      url: '/quote', // change to /quote
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         outputsize: 'full',
-        datatype: 'json',
-	apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
+        datatype: 'json'
       }
     };
 
