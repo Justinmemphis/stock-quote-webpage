@@ -1,5 +1,8 @@
 Summary - ************************************************************************ this is 72 characters
 
+51. 10/18/22:
+ - look into problem with stock symbol lookup; difficult top replicate problem - closed issue on github
+
 50. 10/14/22:
  - create new build; upload to replit server
 
