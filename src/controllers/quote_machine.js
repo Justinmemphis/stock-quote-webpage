@@ -20,26 +20,18 @@ export function QuoteLookup() {
 	let newSymbol = formData.get('stocksymbol');
 	setMySymbol(newSymbol);
 
-	let key = process.env.REACT_APP_RAPID_API_KEY;
-	console.log(key);
-	console.log(process.env);
-
     const options = {
       method: 'GET',
-      url: 'https://alpha-vantage.p.rapidapi.com/query', // change to /quote
+      url: '/quote', // change to /quote
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         outputsize: 'full',
         datatype: 'json'
-      },
-	headers: {
-		'X-RapidAPI-Key': key,
-		'X-RapidAPI-Host': 'alpha-vantage.p.rapidapi.com'
-	}
+      }
     };
 
-    // deploy steps - delete .env; change url above to /quote, remove apikey above
+    // deploy steps - change url above to /quote, remove apikey above
 	  
 
 	// dev environment steps - change url above to "https://alpha-vantage.p.rapidapi.com/query" and
