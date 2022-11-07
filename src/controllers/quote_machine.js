@@ -14,24 +14,38 @@ export function QuoteLookup() {
   const [outputLastCloseDate, setOutputLastCloseDate] = useState('');
 
   const handleSubmit = event => {
-    event.preventDefault();
+	event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    let newSymbol = formData.get('stocksymbol');
-    setMySymbol(newSymbol);
+	const formData = new FormData(event.currentTarget);
+	let newSymbol = formData.get('stocksymbol');
+	setMySymbol(newSymbol);
+
+	let key = process.env.REACT_APP_RAPID_API_KEY;
+	console.log(key);
+	console.log(process.env);
 
     const options = {
       method: 'GET',
-      url: '/quote', // change to /quote
+      url: 'https://alpha-vantage.p.rapidapi.com/query', // change to /quote
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: newSymbol,
         outputsize: 'full',
         datatype: 'json'
-      }
+      },
+	headers: {
+		'X-RapidAPI-Key': key,
+		'X-RapidAPI-Host': 'alpha-vantage.p.rapidapi.com'
+	}
     };
 
     // deploy steps - delete .env; change url above to /quote, remove apikey above
+	  
+
+	// dev environment steps - change url above to "https://alpha-vantage.p.rapidapi.com/query" and
+	  // add headers with 'X-RapidAPI-Key' and 'X-RapidAPI-Host' (after params)
+	  // make sure .env is in root folder
+
 
     axios.request(options).then((response) => {
       let newObject = response.data;
