@@ -1,5 +1,8 @@
 Summary - ************************************************************************ this is 72 characters
 
+52. 11/07/22:
+ - Alpha Vantage API wasn't working so I replaced it with (indirect) Rapid API connection to Alpha Vantage API
+
 51. 10/18/22:
  - look into problem with stock symbol lookup; difficult top replicate problem - closed issue on github
 
